@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Automação 360° · Nahal Group</title>
+<meta name="description" content="Automação 360°: processos, dados e canais correndo sozinhos, no mesmo ritmo. A Nahal faz o seu negócio rodar sem depender de ninguém apertar botão.">
+<meta name="theme-color" content="#06121C">
+<link rel="canonical" href="https://nahalgroup.com.br/automacao.html">
+<meta property="og:title" content="Automação 360° para empresas · Nahal Group">
+<meta property="og:description" content="Processos, dados e canais rodando sozinhos, no mesmo ritmo. Atende todo o Brasil.">
+<meta property="og:url" content="https://nahalgroup.com.br/automacao.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='22' fill='%2315608F'/%3E%3Ccircle cx='60' cy='32' r='7' fill='%23fff'/%3E%3Cpath d='M40 66a20 20 0 0 0 40 0' fill='none' stroke='%23fff' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M26 66a34 34 0 0 0 68 0' fill='none' stroke='%23fff' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&family=Instrument+Sans:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="automacao">
+
+<canvas id="flow"></canvas>
+<div class="ctop" aria-hidden="true"><span id="ctopfill"></span></div>
+<div class="current" aria-hidden="true">
+  <svg viewBox="0 0 46 1000" preserveAspectRatio="none">
+    <defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2F9BD6"/><stop offset="1" stop-color="#46D6EC"/></linearGradient></defs>
+    <path id="ctrack" class="track" d="M23 0 C 6 120,40 230,23 350 S 6 580,23 700 40 880,23 1000"/>
+    <path id="cfill" class="fill" d="M23 0 C 6 120,40 230,23 350 S 6 580,23 700 40 880,23 1000"/>
+    <circle id="chead" class="head" cx="23" cy="0" r="5"/>
+  </svg>
+  <span class="pct" id="cpct">00</span>
+</div>
+
+<header class="nav" id="nav"></header>
+
+<section class="pagehead">
+  <div class="wrap">
+    <span class="mono tag reveal">Frente N·05 · Automação 360°</span>
+    <h1 class="reveal">O negócio rodando sozinho.</h1>
+    <p class="reveal">Conecto processos, dados e canais pra tudo correr no mesmo ritmo, sem depender de ninguém apertar botão.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <span class="mono tag reveal">A dor</span>
+    <h2 class="sec-h reveal">Processos soltos e retrabalho?</h2>
+    <p class="sec-sub reveal">Informação que se perde, tarefa que ninguém fez, cliente que ficou sem resposta. Quando nada conversa, o time vive apagando incêndio. Eu conecto tudo num fluxo só: o que precisa acontecer acontece sozinho, na ordem certa, e o negócio roda mesmo quando você não está olhando.</p>
+  </div>
+</section>
+
+<section class="band tight">
+  <div class="wrap center">
+    <span class="mono tag reveal">O que entra</span>
+    <h2 class="sec-h reveal">Tudo conectado, correndo junto.</h2>
+    <div class="grid" style="margin-top:34px">
+      <div class="panel reveal"><span class="n">01</span><h3>Mapa dos processos</h3><p>Entendo como o negócio funciona hoje e desenho onde a automação tira o peso.</p></div>
+      <div class="panel reveal"><span class="n">02</span><h3>Integração de sistemas</h3><p>Faço suas ferramentas conversarem, sem dado preso nem digitação repetida.</p></div>
+      <div class="panel reveal"><span class="n">03</span><h3>Fluxos automáticos</h3><p>Disparos, lembretes e rotinas que acontecem na hora certa, sozinhos.</p></div>
+      <div class="panel reveal"><span class="n">04</span><h3>Atendimento e follow-up</h3><p>Mensagens, cobrança e pós-venda automáticos, pra nenhum cliente ficar no vácuo.</p></div>
+      <div class="panel reveal"><span class="n">05</span><h3>Relatórios automáticos</h3><p>Dados consolidados sozinhos, sem ninguém montar planilha no fim do mês.</p></div>
+      <div class="panel reveal"><span class="n">06</span><h3>Robôs de tarefas</h3><p>Publicação, cadastros e rotinas repetitivas rodando no piloto automático.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="faq">
+  <div class="wrap">
+    <div class="center"><span class="mono tag reveal">Perguntas frequentes</span><h2 class="sec-h reveal">Dúvidas sobre automação.</h2></div>
+    <div class="faqs reveal">
+      <details class="faq"><summary>O que dá pra automatizar no meu negócio?</summary><div class="ans">Atendimento e follow-up, cobrança, relatórios, cadastros, publicação de conteúdo e processos internos. Quase toda tarefa repetitiva pode rodar sozinha.</div></details>
+      <details class="faq"><summary>Vale a pena pro tamanho da minha empresa?</summary><div class="ans">Sim, e quanto antes melhor. Automação não é só pra empresa grande: é o que deixa a pequena crescer sem precisar contratar pra cada tarefa nova.</div></details>
+      <details class="faq"><summary>Vai mexer no que já funciona hoje?</summary><div class="ans">Não quebro nada. Eu conecto as ferramentas que você já usa e automatizo por cima, respeitando o seu jeito de trabalhar.</div></details>
+      <details class="faq"><summary>Quanto custa?</summary><div class="ans">Depende de quantos processos e integrações. Eu mapeio com você e monto uma proposta sob medida, começando pelo que tira mais peso.</div></details>
+      <details class="faq"><summary>Em quanto tempo vejo efeito?</summary><div class="ans">As primeiras automações costumam entrar no ar em poucas semanas, e o alívio no dia a dia é quase imediato.</div></details>
+      <details class="faq"><summary>Atendem todo o Brasil?</summary><div class="ans">Sim. A base é Alphaville, SP, e o trabalho é remoto, pra empresa de qualquer lugar.</div></details>
+    </div>
+  </div>
+</section>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"O que dá pra automatizar no meu negócio?","acceptedAnswer":{"@type":"Answer","text":"Atendimento e follow-up, cobrança, relatórios, cadastros, publicação de conteúdo e processos internos."}},{"@type":"Question","name":"Vale a pena pro tamanho da minha empresa?","acceptedAnswer":{"@type":"Answer","text":"Sim. Automação deixa a empresa pequena crescer sem contratar pra cada tarefa nova."}},{"@type":"Question","name":"Vai mexer no que já funciona hoje?","acceptedAnswer":{"@type":"Answer","text":"Não quebro nada. Conecto as ferramentas que você já usa e automatizo por cima."}},{"@type":"Question","name":"Quanto custa?","acceptedAnswer":{"@type":"Answer","text":"Depende dos processos e integrações. Mapeio com você e monto proposta sob medida."}},{"@type":"Question","name":"Em quanto tempo vejo efeito?","acceptedAnswer":{"@type":"Answer","text":"As primeiras automações entram no ar em poucas semanas."}},{"@type":"Question","name":"Atendem todo o Brasil?","acceptedAnswer":{"@type":"Answer","text":"Sim. Base em Alphaville, SP, e trabalho remoto pra todo o país."}}]}</script>
+<section class="band cta-band">
+  <div class="wrap">
+    <span class="mono tag reveal">Próximo passo</span>
+    <h2 class="reveal">Cansado de apagar incêndio? <em>Vamos automatizar.</em></h2>
+    <div class="btn-center reveal"><a href="index.html#contato" class="btn btn-p">Falar com a gente</a></div>
+  </div>
+</section>
+
+<footer id="ft"></footer>
+<script src="app.js"></script>
+</body>
+</html>
