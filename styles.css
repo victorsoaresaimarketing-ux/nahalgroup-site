@@ -217,6 +217,24 @@ header.nav.solid{border-bottom-color:rgba(127,185,222,.12)}
 .id .bd .lk a:hover{color:var(--cyan)}
 @media(max-width:760px){.ids{grid-template-columns:1fr}}
 @media(max-width:430px){.id{grid-template-columns:1fr}.id .ph{min-height:160px}}
+.id .bd .more{display:inline-block;margin-top:14px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--cyan);text-transform:uppercase}
+.id .bd .more:hover{color:#fff}
+/* Fundadores */
+.founders{display:flex;flex-direction:column;gap:72px;margin-top:8px}
+.founder{display:grid;grid-template-columns:340px 1fr;gap:50px;align-items:center}
+.founder.alt{grid-template-columns:1fr 340px}
+.founder.alt .fphoto{order:2}
+.fphoto{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--panel-bd);box-shadow:0 34px 70px -48px rgba(70,214,236,.55);aspect-ratio:3/4;background:linear-gradient(160deg,#0e2c40,#06141e)}
+.fphoto img{width:100%;height:100%;object-fit:cover;display:block}
+.fbody .lab{font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--ceu);text-transform:uppercase}
+.fbody h2{font-family:var(--sans);font-size:34px;color:#fff;font-weight:600;margin:8px 0 4px;line-height:1.05}
+.fbody .role{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--cyan);text-transform:uppercase;margin-bottom:20px}
+.fbody .f-head{font-size:18.5px;color:var(--ceu);font-style:italic;line-height:1.5;margin:0 0 20px;border-left:2px solid var(--cyan);padding-left:16px}
+.fbody p{color:var(--muted);font-size:15.5px;line-height:1.78;margin-bottom:14px}
+.fbody .lk{margin-top:10px}
+.fbody .lk a{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--ceu);margin-right:16px}
+.fbody .lk a:hover{color:var(--cyan)}
+@media(max-width:820px){.founder,.founder.alt{grid-template-columns:1fr;gap:24px}.founder.alt .fphoto{order:0}.fphoto{max-width:300px}}
 
 /* CONTATO / CTA */
 .cta-band{padding:100px 0;text-align:center;position:relative}

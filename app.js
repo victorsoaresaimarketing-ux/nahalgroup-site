@@ -27,7 +27,7 @@
     + '<p class="ft-tag">Muitas correntes, uma força.</p></div>'
     + '<div class="ft-cols">'
     + '<div class="ft-col"><h4>Frentes</h4><a href="marketing.html">Marketing e tráfego</a><a href="inteligencia.html">Inteligência artificial</a><a href="software.html">Software e apps</a><a href="marcas.html">Criação de marcas</a><a href="automacao.html">Automação 360°</a></div>'
-    + '<div class="ft-col"><h4>Grupo</h4><a href="' + base + '#manifesto">Manifesto</a><a href="' + base + '#origem">Origem do nome</a><a href="' + base + '#filosofia">Filosofia</a><a href="' + base + '#socios">Sócios</a><a href="blog.html">Blog</a></div>'
+    + '<div class="ft-col"><h4>Grupo</h4><a href="' + base + '#manifesto">Manifesto</a><a href="' + base + '#origem">Origem do nome</a><a href="' + base + '#filosofia">Filosofia</a><a href="fundadores.html">Fundadores</a><a href="blog.html">Blog</a></div>'
     + '<div class="ft-col"><h4>Contato</h4><a href="mailto:contato@nahalgroup.com.br">contato@nahalgroup.com.br</a><a href="https://instagram.com/nahalgroupoficial" target="_blank" rel="noopener">@nahalgroupoficial</a><span>Alameda Mamoré, 503 · Alphaville · Barueri/SP · 06454-040</span><span>Atende todo o Brasil</span></div>'
     + '</div></div>'
     + '<div class="ft-bot"><span>© 2026 Nahal Group · Hidrogeometria</span><span>nahalgroup.com.br</span></div>'
