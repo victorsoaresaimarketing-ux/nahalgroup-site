@@ -235,15 +235,33 @@
   function grow(){ input.style.height='auto'; input.style.height=Math.min(input.scrollHeight,90)+'px'; }
 
   function isMobile(){ return window.matchMedia('(max-width:600px)').matches; }
+  var savedY = 0;
+  function lockScroll(){
+    document.documentElement.classList.add('nchat-lock');
+    if(isMobile()){
+      savedY = window.scrollY || window.pageYOffset || 0;
+      var b = document.body;
+      b.style.position = 'fixed'; b.style.top = (-savedY) + 'px'; b.style.left = '0'; b.style.right = '0'; b.style.width = '100%';
+    }
+  }
+  function unlockScroll(){
+    document.documentElement.classList.remove('nchat-lock');
+    var b = document.body;
+    if(b.style.position === 'fixed'){ b.style.position = ''; b.style.top = ''; b.style.left = ''; b.style.right = ''; b.style.width = ''; window.scrollTo(0, savedY); }
+  }
   function fit(){
     if(!panel.classList.contains('open')) return;
-    if(window.visualViewport && isMobile()){ panel.style.height = window.visualViewport.height + 'px'; body.scrollTop = body.scrollHeight; }
-    else { panel.style.height = ''; }
+    if(window.visualViewport && isMobile()){
+      var vv = window.visualViewport;
+      panel.style.height = vv.height + 'px';
+      panel.style.top = (vv.offsetTop || 0) + 'px';
+      body.scrollTop = body.scrollHeight;
+    } else { panel.style.height = ''; panel.style.top = ''; }
   }
   if(window.visualViewport){ window.visualViewport.addEventListener('resize', fit); window.visualViewport.addEventListener('scroll', fit); }
 
-  function open(){ panel.classList.add('open'); launch.classList.remove('teaser'); launch.classList.add('hide'); document.documentElement.classList.add('nchat-lock'); if(!opened){ render(); opened=true; } fit(); body.scrollTop=body.scrollHeight; setTimeout(function(){ if(!isMobile()){ try{ input.focus(); }catch(e){} } fit(); },180); }
-  function close(){ panel.classList.remove('open'); launch.classList.remove('hide'); document.documentElement.classList.remove('nchat-lock'); panel.style.height=''; }
+  function open(){ panel.classList.add('open'); launch.classList.remove('teaser'); launch.classList.add('hide'); lockScroll(); if(!opened){ render(); opened=true; } fit(); body.scrollTop=body.scrollHeight; setTimeout(function(){ if(!isMobile()){ try{ input.focus(); }catch(e){} } fit(); },180); }
+  function close(){ panel.classList.remove('open'); launch.classList.remove('hide'); unlockScroll(); panel.style.height=''; panel.style.top=''; }
   launch.addEventListener('click', open);
   panel.querySelector('.x').addEventListener('click', close);
   input.addEventListener('input', grow);
