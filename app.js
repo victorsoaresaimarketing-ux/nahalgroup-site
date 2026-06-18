@@ -234,8 +234,16 @@
   function typing(on){ var t=body.querySelector('.nchat-typing'); if(on){ if(!t){ t=document.createElement('div'); t.className='nchat-typing'; t.innerHTML='<i></i><i></i><i></i>'; body.appendChild(t); body.scrollTop=body.scrollHeight; } } else if(t){ t.parentNode.removeChild(t); } }
   function grow(){ input.style.height='auto'; input.style.height=Math.min(input.scrollHeight,90)+'px'; }
 
-  function open(){ panel.classList.add('open'); launch.classList.remove('teaser'); launch.classList.add('hide'); if(!opened){ render(); opened=true; } body.scrollTop=body.scrollHeight; setTimeout(function(){ try{ input.focus(); }catch(e){} },120); }
-  function close(){ panel.classList.remove('open'); launch.classList.remove('hide'); }
+  function isMobile(){ return window.matchMedia('(max-width:600px)').matches; }
+  function fit(){
+    if(!panel.classList.contains('open')) return;
+    if(window.visualViewport && isMobile()){ panel.style.height = window.visualViewport.height + 'px'; body.scrollTop = body.scrollHeight; }
+    else { panel.style.height = ''; }
+  }
+  if(window.visualViewport){ window.visualViewport.addEventListener('resize', fit); window.visualViewport.addEventListener('scroll', fit); }
+
+  function open(){ panel.classList.add('open'); launch.classList.remove('teaser'); launch.classList.add('hide'); document.documentElement.classList.add('nchat-lock'); if(!opened){ render(); opened=true; } fit(); body.scrollTop=body.scrollHeight; setTimeout(function(){ if(!isMobile()){ try{ input.focus(); }catch(e){} } fit(); },180); }
+  function close(){ panel.classList.remove('open'); launch.classList.remove('hide'); document.documentElement.classList.remove('nchat-lock'); panel.style.height=''; }
   launch.addEventListener('click', open);
   panel.querySelector('.x').addEventListener('click', close);
   input.addEventListener('input', grow);

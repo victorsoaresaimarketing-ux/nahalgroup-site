@@ -274,7 +274,9 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .nchat-f .send{width:42px;height:42px;flex-shrink:0;border:none;border-radius:12px;background:linear-gradient(150deg,#2F9BD6,#46D6EC);color:#06121C;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .nchat-f .send:disabled{opacity:.45;cursor:default}
 .nchat-f .send svg{width:18px;height:18px}
-@media(max-width:430px){.nchat{right:8px;bottom:8px;width:auto;left:8px;height:calc(100vh - 76px);max-height:none}.nchat-launch{right:14px;bottom:16px}.nchat-launch .orb{width:54px;height:54px}.nchat-launch .orb svg{width:27px;height:27px}.nchat-launch.teaser .lbl{max-width:200px;font-size:10.5px;letter-spacing:.06em}}
+@media(max-width:600px){.nchat{top:0;right:0;bottom:0;left:0;width:100%;max-width:none;height:100vh;height:100dvh;max-height:none;border-radius:0;border:0}.nchat.open{animation:nchatup .28s ease}html.nchat-lock,html.nchat-lock body{overflow:hidden;overscroll-behavior:none}}
+@keyframes nchatup{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@media(max-width:430px){.nchat-launch{right:14px;bottom:16px}.nchat-launch .orb{width:54px;height:54px}.nchat-launch .orb svg{width:27px;height:27px}.nchat-launch.teaser .lbl{max-width:200px;font-size:10.5px;letter-spacing:.06em}}
 
 /* CONTATO / CTA */
 .cta-band{padding:100px 0;text-align:center;position:relative}
