@@ -188,3 +188,62 @@
     }
   }
 })();
+
+// Chat IA de atendimento (na cara da marca)
+(function(){
+  var WEBHOOK = 'https://alphatrinity.app.n8n.cloud/webhook/nahal-chat';
+  var GREET = 'Oi! Sou a inteligência da Nahal. Me conta rapidinho: qual é o seu negócio e o que você quer destravar?';
+  var SYM = '<svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="15" r="3.4" fill="#fff"/><path d="M15 30 a9 9 0 0 0 18 0" stroke="#fff" stroke-width="3" stroke-linecap="round"/><path d="M10 30 a14 14 0 0 0 28 0" stroke="#bfe6f5" stroke-width="2.3" stroke-linecap="round"/></svg>';
+
+  var store = (function(){ try{ var s=window.sessionStorage; s.setItem('_nt','1'); s.removeItem('_nt'); return s; }catch(e){ var m={}; return {getItem:function(k){return (k in m)?m[k]:null;},setItem:function(k,v){m[k]=v;},removeItem:function(k){delete m[k];}}; } })();
+
+  var sid = store.getItem('nchat_sid'); if(!sid){ sid='n'+Date.now()+Math.random().toString(36).slice(2,8); store.setItem('nchat_sid', sid); }
+  var msgs; try{ msgs = JSON.parse(store.getItem('nchat_msgs')||'null'); }catch(e){ msgs=null; }
+  if(!msgs || !msgs.length){ msgs=[{role:'assistant', content:GREET}]; }
+  var leadSent = store.getItem('nchat_lead')==='1';
+  var busy=false, opened=false;
+  function save(){ try{ store.setItem('nchat_msgs', JSON.stringify(msgs)); store.setItem('nchat_lead', leadSent?'1':'0'); }catch(e){} }
+
+  var launch=document.createElement('button');
+  launch.className='nchat-launch'; launch.type='button'; launch.setAttribute('aria-label','Falar com a Nahal');
+  launch.innerHTML='<span class="lbl">Falar com a Nahal</span><span class="orb">'+SYM+'</span>';
+  var panel=document.createElement('div'); panel.className='nchat';
+  panel.innerHTML='<div class="nchat-h"><span class="sym">'+SYM+'</span><span class="tt"><b>Nahal</b><span>Atendimento · responde na hora</span></span><button class="x" type="button" aria-label="Fechar">&times;</button></div><div class="nchat-body"></div><div class="nchat-f"><textarea rows="1" placeholder="Escreva aqui..." aria-label="Sua mensagem"></textarea><button class="send" type="button" aria-label="Enviar"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>';
+  function add(){ document.body.appendChild(launch); document.body.appendChild(panel); }
+  if(document.body){ add(); } else { document.addEventListener('DOMContentLoaded', add); }
+
+  var body=panel.querySelector('.nchat-body'), input=panel.querySelector('textarea'), sendBtn=panel.querySelector('.send');
+
+  function bubble(role, text){ var d=document.createElement('div'); d.className='nchat-msg '+(role==='user'?'me':'bot'); d.textContent=text; body.appendChild(d); body.scrollTop=body.scrollHeight; }
+  function render(){ body.innerHTML=''; for(var i=0;i<msgs.length;i++) bubble(msgs[i].role, msgs[i].content); }
+  function typing(on){ var t=body.querySelector('.nchat-typing'); if(on){ if(!t){ t=document.createElement('div'); t.className='nchat-typing'; t.innerHTML='<i></i><i></i><i></i>'; body.appendChild(t); body.scrollTop=body.scrollHeight; } } else if(t){ t.parentNode.removeChild(t); } }
+  function grow(){ input.style.height='auto'; input.style.height=Math.min(input.scrollHeight,90)+'px'; }
+
+  function open(){ panel.classList.add('open'); launch.classList.add('hide'); if(!opened){ render(); opened=true; } body.scrollTop=body.scrollHeight; setTimeout(function(){ try{ input.focus(); }catch(e){} },120); }
+  function close(){ panel.classList.remove('open'); launch.classList.remove('hide'); }
+  launch.addEventListener('click', open);
+  panel.querySelector('.x').addEventListener('click', close);
+  input.addEventListener('input', grow);
+
+  function send(){
+    var text=input.value.trim(); if(!text||busy) return;
+    msgs.push({role:'user', content:text}); bubble('user', text); save();
+    input.value=''; grow(); busy=true; sendBtn.disabled=true; typing(true);
+    fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:sid,leadSent:leadSent,messages:msgs})})
+      .then(function(r){ return r.json(); })
+      .then(function(d){
+        typing(false);
+        var reply=(d&&d.reply)?d.reply:'Recebi sua mensagem. Já te respondo por aqui.';
+        msgs.push({role:'assistant', content:reply}); bubble('assistant', reply);
+        if(d&&d.leadReady){ leadSent=true; }
+        save(); busy=false; sendBtn.disabled=false;
+      })
+      .catch(function(){
+        typing(false);
+        bubble('assistant','Tive um probleminha pra responder agora. Você pode falar com a gente no WhatsApp pela seção de contato. Já já eu volto.');
+        busy=false; sendBtn.disabled=false;
+      });
+  }
+  sendBtn.addEventListener('click', send);
+  input.addEventListener('keydown', function(e){ if(e.key==='Enter' && !e.shiftKey){ e.preventDefault(); send(); } });
+})();
