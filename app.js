@@ -209,7 +209,22 @@
   launch.innerHTML='<span class="lbl">Falar com a Nahal</span><span class="orb">'+SYM+'</span>';
   var panel=document.createElement('div'); panel.className='nchat';
   panel.innerHTML='<div class="nchat-h"><span class="sym">'+SYM+'</span><span class="tt"><b>Nahal</b><span>Atendimento · responde na hora</span></span><button class="x" type="button" aria-label="Fechar">&times;</button></div><div class="nchat-body"></div><div class="nchat-f"><textarea rows="1" placeholder="Escreva aqui..." aria-label="Sua mensagem"></textarea><button class="send" type="button" aria-label="Enviar"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>';
-  function add(){ document.body.appendChild(launch); document.body.appendChild(panel); }
+  function add(){
+    document.body.appendChild(launch); document.body.appendChild(panel);
+    setTimeout(function(){
+      if(panel.classList.contains('open')){ launch.classList.add('in'); return; }
+      launch.classList.add('in','teaser');
+      setTimeout(function(){ launch.classList.remove('teaser'); }, 4500);
+    }, 2600);
+    var teases=0;
+    var iv=setInterval(function(){
+      if(teases>=4){ clearInterval(iv); return; }
+      if(launch.classList.contains('in') && !panel.classList.contains('open') && !launch.classList.contains('hide')){
+        teases++; launch.classList.add('teaser');
+        setTimeout(function(){ launch.classList.remove('teaser'); }, 4200);
+      }
+    }, 38000);
+  }
   if(document.body){ add(); } else { document.addEventListener('DOMContentLoaded', add); }
 
   var body=panel.querySelector('.nchat-body'), input=panel.querySelector('textarea'), sendBtn=panel.querySelector('.send');
@@ -219,7 +234,7 @@
   function typing(on){ var t=body.querySelector('.nchat-typing'); if(on){ if(!t){ t=document.createElement('div'); t.className='nchat-typing'; t.innerHTML='<i></i><i></i><i></i>'; body.appendChild(t); body.scrollTop=body.scrollHeight; } } else if(t){ t.parentNode.removeChild(t); } }
   function grow(){ input.style.height='auto'; input.style.height=Math.min(input.scrollHeight,90)+'px'; }
 
-  function open(){ panel.classList.add('open'); launch.classList.add('hide'); if(!opened){ render(); opened=true; } body.scrollTop=body.scrollHeight; setTimeout(function(){ try{ input.focus(); }catch(e){} },120); }
+  function open(){ panel.classList.add('open'); launch.classList.remove('teaser'); launch.classList.add('hide'); if(!opened){ render(); opened=true; } body.scrollTop=body.scrollHeight; setTimeout(function(){ try{ input.focus(); }catch(e){} },120); }
   function close(){ panel.classList.remove('open'); launch.classList.remove('hide'); }
   launch.addEventListener('click', open);
   panel.querySelector('.x').addEventListener('click', close);

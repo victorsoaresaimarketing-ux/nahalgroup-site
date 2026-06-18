@@ -235,14 +235,19 @@ header.nav.solid{border-bottom-color:rgba(127,185,222,.12)}
 .fbody .lk a{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--ceu);margin-right:16px}
 .fbody .lk a:hover{color:var(--cyan)}
 @media(max-width:820px){.founder,.founder.alt{grid-template-columns:1fr;gap:24px}.founder.alt .fphoto{order:0}.fphoto{max-width:300px}}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 /* Chat IA de atendimento */
-.nchat-launch{position:fixed;right:22px;bottom:22px;z-index:9998;display:flex;align-items:center;gap:12px;cursor:pointer;border:none;background:none;padding:0}
-.nchat-launch .lbl{background:rgba(6,18,28,.82);border:1px solid var(--panel-bd);color:var(--ceu);font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:9px 13px;border-radius:30px;backdrop-filter:blur(8px);white-space:nowrap}
-.nchat-launch .orb{width:58px;height:58px;border-radius:50%;background:linear-gradient(150deg,#15608F,#2F9BD6);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px -8px rgba(70,214,236,.55);animation:nchatpulse 3s ease-in-out infinite;transition:transform .25s ease}
+.nchat-launch{position:fixed;right:22px;bottom:22px;z-index:9998;display:flex;align-items:center;gap:0;cursor:pointer;border:none;background:none;padding:0;opacity:0;transform:translateY(10px) scale(.5);pointer-events:none;transition:opacity .4s ease,transform .5s cubic-bezier(.2,1.35,.4,1)}
+.nchat-launch.in{opacity:1;transform:none;pointer-events:auto}
+.nchat-launch .lbl{max-width:0;opacity:0;padding:0;margin:0;overflow:hidden;white-space:nowrap;background:rgba(6,18,28,.85);border:1px solid var(--panel-bd);color:var(--ceu);font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;border-radius:30px;backdrop-filter:blur(8px);transition:max-width .45s ease,opacity .3s ease,padding .45s ease,margin .45s ease}
+.nchat-launch.teaser .lbl{max-width:240px;opacity:1;padding:9px 13px;margin-right:11px}
+.nchat-launch .orb{width:58px;height:58px;border-radius:50%;background:linear-gradient(150deg,#15608F,#2F9BD6);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px -8px rgba(70,214,236,.55);animation:nchatpulse 3s ease-in-out infinite;transition:transform .25s ease;flex-shrink:0}
 .nchat-launch .orb svg{width:30px;height:30px}
 @keyframes nchatpulse{0%,100%{box-shadow:0 12px 30px -8px rgba(70,214,236,.5),0 0 0 0 rgba(70,214,236,.4)}50%{box-shadow:0 12px 34px -8px rgba(70,214,236,.78),0 0 0 12px rgba(70,214,236,0)}}
+.nchat-launch.teaser .orb{animation:nchatpulse 3s ease-in-out infinite,nchatbounce .6s ease}
+@keyframes nchatbounce{0%,100%{transform:translateY(0)}30%{transform:translateY(-7px)}60%{transform:translateY(-2px)}}
 .nchat-launch:hover .orb{transform:translateY(-2px)}
-.nchat-launch.hide{display:none}
+.nchat-launch.hide{opacity:0;transform:translateY(10px) scale(.5);pointer-events:none}
 .nchat{position:fixed;right:22px;bottom:22px;z-index:9999;width:380px;max-width:calc(100vw - 32px);height:560px;max-height:calc(100vh - 90px);background:rgba(8,20,30,.97);border:1px solid var(--panel-bd);border-radius:20px;backdrop-filter:blur(16px);box-shadow:0 40px 90px -28px rgba(0,0,0,.85);display:none;flex-direction:column;overflow:hidden}
 .nchat.open{display:flex;animation:nchatin .3s ease}
 @keyframes nchatin{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
@@ -263,13 +268,13 @@ header.nav.solid{border-bottom-color:rgba(127,185,222,.12)}
 .nchat-typing i:nth-child(2){animation-delay:.18s}.nchat-typing i:nth-child(3){animation-delay:.36s}
 @keyframes nchatdot{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
 .nchat-f{padding:12px;border-top:1px solid var(--panel-bd);display:flex;gap:8px;align-items:flex-end}
-.nchat-f textarea{flex:1;resize:none;background:rgba(255,255,255,.04);border:1px solid var(--panel-bd);border-radius:12px;color:#fff;font-family:var(--sans);font-size:14px;padding:11px 13px;max-height:90px;line-height:1.4}
+.nchat-f textarea{flex:1;resize:none;background:rgba(255,255,255,.04);border:1px solid var(--panel-bd);border-radius:12px;color:#fff;font-family:var(--sans);font-size:16px;padding:11px 13px;max-height:90px;line-height:1.4}
 .nchat-f textarea:focus{outline:none;border-color:rgba(70,214,236,.55)}
 .nchat-f textarea::placeholder{color:var(--muted)}
 .nchat-f .send{width:42px;height:42px;flex-shrink:0;border:none;border-radius:12px;background:linear-gradient(150deg,#2F9BD6,#46D6EC);color:#06121C;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .nchat-f .send:disabled{opacity:.45;cursor:default}
 .nchat-f .send svg{width:18px;height:18px}
-@media(max-width:430px){.nchat{right:8px;bottom:8px;width:auto;left:8px;height:calc(100vh - 76px);max-height:none}.nchat-launch{right:14px;bottom:14px}.nchat-launch .lbl{display:none}}
+@media(max-width:430px){.nchat{right:8px;bottom:8px;width:auto;left:8px;height:calc(100vh - 76px);max-height:none}.nchat-launch{right:14px;bottom:16px}.nchat-launch .orb{width:54px;height:54px}.nchat-launch .orb svg{width:27px;height:27px}.nchat-launch.teaser .lbl{max-width:200px;font-size:10.5px;letter-spacing:.06em}}
 
 /* CONTATO / CTA */
 .cta-band{padding:100px 0;text-align:center;position:relative}
