@@ -8,9 +8,9 @@
 
   // NAV: a home é página única rica (âncoras). Páginas de serviço usam o mesmo nav voltando pra home (index.html#...).
   var home = (document.body.getAttribute('data-page') === 'inicio');
-  var base = home ? '' : 'index.html';
+  var base = home ? '' : '/';
   var navHTML = '<div class="wrap nav-in">'
-    + '<a href="' + (home ? '#top' : 'index.html') + '" class="nav-logo" aria-label="Nahal Group">' + LOGO + '</a>'
+    + '<a href="' + (home ? '#top' : '/') + '" class="nav-logo" aria-label="Nahal Group">' + LOGO + '</a>'
     + '<nav class="nav-links" id="navlinks">'
     + '<a href="' + base + '#frentes">Serviços</a>'
     + '<a href="' + base + '#origem">Origem</a>'
