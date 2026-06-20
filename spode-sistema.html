@@ -225,10 +225,30 @@
     .accept .ab{font-size:12px;padding:11px 15px}
   }
   .demo-tag{position:fixed;top:8px;right:14px;z-index:60;font-size:10px;letter-spacing:.06em;color:var(--cyan);background:rgba(8,12,18,.8);border:1px solid rgba(70,214,236,.3);border-radius:20px;padding:5px 11px}
+  /* diario + IA */
+  .diario{display:flex;flex-direction:column;gap:14px}
+  .dnote{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:18px}
+  .dnote .dh{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+  .dnote .dh b{font-size:14.5px}.dnote .dh span{display:block;font-size:12px;color:var(--muted);margin-top:3px}
+  .dnote p{font-size:13.5px;color:var(--txt2);margin:12px 0;line-height:1.55}
+  .dnote .dmeta{display:flex;gap:22px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+  .dnote .dphotos{display:flex;gap:8px;margin-top:13px}
+  .dnote .dphotos i{width:66px;height:50px;border-radius:7px;background:#1f2731;border:1px solid var(--line);display:grid;place-items:center}
+  .dnote .dphotos i::before{content:"";width:19px;height:19px;background:var(--faint);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z'/%3E%3Ccircle cx='12' cy='13' r='4'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z'/%3E%3Ccircle cx='12' cy='13' r='4'/%3E%3C/svg%3E") center/contain no-repeat}
+  .ai-panel{border-color:rgba(70,214,236,.3)!important;background:linear-gradient(180deg,rgba(70,214,236,.045),var(--card))}
+  .ai-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.03em;color:#04101a;background:var(--cyan);padding:3px 10px;border-radius:20px}
+  .ai-chat{display:flex;flex-direction:column;gap:10px;margin:2px 0 14px}
+  .ai-msg{max-width:84%;padding:11px 14px;border-radius:13px;font-size:13px;line-height:1.52}
+  .ai-msg.user{align-self:flex-end;background:rgba(255,58,48,.13);border:1px solid rgba(255,58,48,.22);color:#ffd6d2;border-bottom-right-radius:5px}
+  .ai-msg.bot{align-self:flex-start;background:rgba(70,214,236,.09);border:1px solid rgba(70,214,236,.22);color:#d8eff6;border-bottom-left-radius:5px}
+  .ai-input{display:flex;gap:8px;align-items:center;border:1px solid var(--line);border-radius:11px;padding:6px 6px 6px 15px;background:rgba(255,255,255,.03)}
+  .ai-input input{flex:1;background:none;border:none;color:var(--txt);font-size:13px;font-family:var(--sans);outline:none}
+  .ai-input input::placeholder{color:var(--muted)}
+  .ai-input .go{width:38px;height:38px;border-radius:9px;border:none;background:var(--cyan);cursor:pointer;display:grid;place-items:center;flex-shrink:0}
+  .ai-input .go svg{width:17px;height:17px;stroke:#04101a}
 </style>
 </head>
 <body>
-<div class="demo-tag">Prévia rápida · rascunho Nahal Group</div>
 <div class="app">
 
   <aside class="side" id="side">
@@ -243,6 +263,7 @@
       <a data-s="orcamento"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2h6l5 5v15H4V2z"/><path d="M9 13h6M9 17h6"/></svg>Orçamentos</a>
       <a data-s="aprovacoes"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>Aprovações<span class="badge">3</span></a>
       <a data-s="operacao"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.7 2.7-2-2 2.7-2.7z"/></svg>Operação</a>
+      <a data-s="diario"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Diário de obra</a>
     </nav>
     <div class="who">
       <span class="av">SM</span>
@@ -316,6 +337,16 @@
             </tbody>
           </table>
         </div>
+        <div class="panel ai-panel" style="margin-top:16px">
+          <div class="ph"><h3>Copiloto da gestão</h3><span class="ai-badge">IA dedicada</span></div>
+          <div class="ai-chat">
+            <div class="ai-msg user">Como está a proposta da Coopagro Sorriso?</div>
+            <div class="ai-msg bot">A Subestação 1.500 kVA da Coopagro Sorriso (R$ 1,24 mi) está aguardando aprovação da diretoria há 2h, com margem de 28%. Vendedor Tiago L., engenharia já validou. É o maior negócio aberto do mês.</div>
+            <div class="ai-msg user">E o faturamento de Sorriso em junho?</div>
+            <div class="ai-msg bot">Sorriso/MT fechou R$ 640k em junho, segunda maior do mês atrás de Panambi (R$ 980k), com alta de 8% sobre maio. Quer que eu detalhe por projeto?</div>
+          </div>
+          <div class="ai-input"><input placeholder="Pergunte sobre clientes, propostas, faturamento, filiais..." readonly><button class="go"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h14M12 5l7 7-7 7"/></svg></button></div>
+        </div>
       </section>
 
       <!-- PIPELINE -->
@@ -377,7 +408,7 @@
           </table>
           <div class="field-note" style="border-color:rgba(91,141,239,.4);background:rgba(91,141,239,.05);color:#cdddff">
             <span class="ic" style="background:rgba(91,141,239,.14);color:var(--blue)"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.2-8.6"/><path d="M22 4 12 14.01l-3-3"/></svg></span>
-            <div><b>Pronto para integrar.</b> Quando o ERP (Domínio) abrir a comunicação, custo e estoque entram aqui automaticamente. Por enquanto, o orçamento já roda completo dentro do sistema.</div>
+            <div><b>Orçamento completo, do jeito de vocês.</b> A equipe lança custo e estoque por um fluxo simples, ou a gente importa de planilha em poucos cliques. Se mais pra frente houver uma ponte com o seu sistema atual, dá pra automatizar. A forma certa a gente desenha junto com vocês.</div>
           </div>
         </div>
       </section>
@@ -442,6 +473,38 @@
         </div>
       </section>
 
+      <!-- DIÁRIO DE OBRA -->
+      <section class="screen" id="diario">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:18px">
+          <div class="seg" style="margin:0">Diário de obra · registros do campo</div>
+          <button class="newbtn"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Novo registro (campo)</button>
+        </div>
+        <div class="diario">
+          <article class="dnote">
+            <div class="dh"><div><b>Coopagro Sorriso</b><span>Subestação 1.500 kVA · Sorriso/MT</span></div><span class="tag t-gan">Hoje · 14h20</span></div>
+            <p>Concluída a montagem da cabine de média tensão e o lançamento de cabos. Estrutura aterrada e testada. Aguardando energização da concessionária. Sem intercorrências.</p>
+            <div class="dmeta"><span>Equipe 2 · 3 técnicos</span><span>8h trabalhadas</span></div>
+            <div class="dphotos"><i></i><i></i><i></i></div>
+          </article>
+          <article class="dnote">
+            <div class="dh"><div><b>Frigorífico Norte</b><span>Automação industrial · Paragominas/PA</span></div><span class="tag t-orc">Hoje · 11h05</span></div>
+            <p>Instalação dos painéis de automação e fechamento da infra de cabos. Iniciada a parametrização dos CLPs. Faltam ajustes de sensores, previstos para amanhã.</p>
+            <div class="dmeta"><span>Equipe 1 · 2 técnicos</span><span>6h trabalhadas</span></div>
+            <div class="dphotos"><i></i><i></i></div>
+          </article>
+          <article class="dnote">
+            <div class="dh"><div><b>Cerealista Oeste</b><span>Banco de Capacitores · Panambi/RS</span></div><span class="tag t-apr">Ontem · 16h40</span></div>
+            <p>Comissionamento do banco de capacitores concluído. Medições dentro do esperado, fator de potência corrigido. Cliente acompanhou e assinou o aceite.</p>
+            <div class="dmeta"><span>Equipe 3 · 2 técnicos</span><span>5h trabalhadas</span></div>
+            <div class="dphotos"><i></i><i></i><i></i></div>
+          </article>
+        </div>
+        <div class="field-note">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12" y2="20"/></svg></span>
+          <div><b>O diário de obra fica todo aqui.</b> O técnico registra a obra do canteiro, com foto, horas e o que foi feito, mesmo sem sinal. A diretoria acompanha tudo centralizado, sem planilha e sem grupo de WhatsApp.</div>
+        </div>
+      </section>
+
     </div>
 
     <div class="accept">
@@ -455,7 +518,7 @@
 
 <script>
 (function(){
-  var titles={painel:['Painel gerencial','Visão consolidada · todas as filiais'],pipeline:['Pipeline comercial','Do campo ao fechamento'],orcamento:['Orçamento','Engenharia · custo e margem'],aprovacoes:['Aprovações','Decisão da diretoria'],operacao:['Operação','Execução por filial']};
+  var titles={painel:['Painel gerencial','Visão consolidada · todas as filiais'],pipeline:['Pipeline comercial','Do campo ao fechamento'],orcamento:['Orçamento','Engenharia · custo e margem'],aprovacoes:['Aprovações','Decisão da diretoria'],operacao:['Operação','Execução por filial'],diario:['Diário de obra','Registros do campo · por equipe']};
   var nav=document.getElementById('nav'), ttl=document.getElementById('ttl'), sub=document.getElementById('sub');
   nav.addEventListener('click',function(e){
     var a=e.target.closest('a[data-s]'); if(!a) return;
