@@ -246,6 +246,21 @@
   .ai-input input::placeholder{color:var(--muted)}
   .ai-input .go{width:38px;height:38px;border-radius:9px;border:none;background:var(--cyan);cursor:pointer;display:grid;place-items:center;flex-shrink:0}
   .ai-input .go svg{width:17px;height:17px;stroke:#04101a}
+  /* inicio / menu de modulos */
+  .intro{margin-bottom:22px}
+  .intro .ik{display:inline-block;font-family:var(--disp);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);background:rgba(70,214,236,.1);border:1px solid rgba(70,214,236,.25);padding:5px 12px;border-radius:20px}
+  .intro .ih{font-family:var(--disp);font-weight:400;text-transform:uppercase;font-size:clamp(24px,4vw,34px);letter-spacing:.01em;color:#fff;margin:14px 0 0}
+  .intro .ip{max-width:600px;margin:10px 0 0;font-size:14.5px;color:var(--txt2);line-height:1.6}
+  .modgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .modcard{display:flex;flex-direction:column;gap:9px;padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--card);cursor:pointer;text-decoration:none;color:inherit;transition:transform .2s,border-color .2s,box-shadow .2s}
+  .modcard:hover{transform:translateY(-3px);border-color:rgba(70,214,236,.5);box-shadow:0 14px 34px -16px rgba(0,0,0,.7)}
+  .modcard .mi{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;background:rgba(70,214,236,.12);color:var(--cyan)}
+  .modcard .mi svg{width:21px;height:21px;stroke:currentColor}
+  .modcard b{font-size:15px;color:var(--txt);font-weight:600}
+  .modcard .md{font-size:12.5px;color:var(--muted);line-height:1.45}
+  .modcard .go{margin-top:auto;font-family:var(--head);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan)}
+  @media(max-width:860px){.modgrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.modgrid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -258,7 +273,8 @@
     </div>
     <div class="navttl">Operação</div>
     <nav class="nav" id="nav">
-      <a class="on" data-s="painel"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>Painel</a>
+      <a class="on" data-s="inicio"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>Início</a>
+      <a data-s="painel"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>Painel</a>
       <a data-s="pipeline"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>Pipeline<span class="badge">12</span></a>
       <a data-s="orcamento"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2h6l5 5v15H4V2z"/><path d="M9 13h6M9 17h6"/></svg>Orçamentos</a>
       <a data-s="aprovacoes"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>Aprovações<span class="badge">3</span></a>
@@ -274,8 +290,8 @@
   <div class="main">
     <header class="top">
       <button class="menu-btn" id="menu"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
-      <h1 id="ttl">Painel gerencial</h1>
-      <span class="sub" id="sub">Visão consolidada · todas as filiais</span>
+      <h1 id="ttl">Seu sistema, por dentro</h1>
+      <span class="sub" id="sub">Prévia navegável · clique pra explorar</span>
       <div class="spacer"></div>
       <span class="pill sync"><span class="dot"></span>Campo sincronizado</span>
       <button class="iconbtn"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg><span class="n">3</span></button>
@@ -283,8 +299,25 @@
 
     <div class="scroll">
 
+      <!-- INÍCIO -->
+      <section class="screen on" id="inicio">
+        <div class="intro">
+          <span class="ik">Comece por aqui</span>
+          <h2 class="ih">Seu sistema, por dentro.</h2>
+          <p class="ip">Esta é uma prévia navegável. Clique em cada área pra ver como ela fica. Quando terminar de explorar, aparece aqui embaixo o botão pra seguir pro investimento.</p>
+        </div>
+        <div class="modgrid">
+          <a class="modcard" data-s="painel"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg></span><b>Painel gerencial</b><span class="md">Faturamento, margem e pipeline num lugar só.</span><span class="go">Abrir →</span></a>
+          <a class="modcard" data-s="pipeline"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></span><b>Pipeline comercial</b><span class="md">Do campo ao fechamento, etapa por etapa.</span><span class="go">Abrir →</span></a>
+          <a class="modcard" data-s="orcamento"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2h6l5 5v15H4V2z"/><path d="M9 13h6M9 17h6"/></svg></span><b>Orçamentos</b><span class="md">Engenharia, custo e margem do projeto.</span><span class="go">Abrir →</span></a>
+          <a class="modcard" data-s="aprovacoes"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="m9 12 2 2 4-4"/></svg></span><b>Aprovações</b><span class="md">A diretoria decide pela margem.</span><span class="go">Abrir →</span></a>
+          <a class="modcard" data-s="operacao"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.7 2.7-2-2 2.7-2.7z"/></svg></span><b>Operação</b><span class="md">Execução e ordens de serviço por filial.</span><span class="go">Abrir →</span></a>
+          <a class="modcard" data-s="diario"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span><b>Diário de obra</b><span class="md">Registros do campo, foto e horas, por equipe.</span><span class="go">Abrir →</span></a>
+        </div>
+      </section>
+
       <!-- PAINEL -->
-      <section class="screen on" id="painel">
+      <section class="screen" id="painel">
         <div class="kpis">
           <div class="kpi"><div class="lab"><span class="ic" style="background:rgba(51,199,127,.14);color:var(--green)"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>Faturamento do mês</div><div class="v">R$ 2,43 mi</div><div class="d up">▲ 12,4% vs mês anterior</div></div>
           <div class="kpi"><div class="lab"><span class="ic" style="background:rgba(246,178,60,.14);color:var(--amber)"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></span>Margem média</div><div class="v">31,2%</div><div class="d up">▲ 1,8 p.p.</div></div>
@@ -518,18 +551,22 @@
 
 <script>
 (function(){
-  var titles={painel:['Painel gerencial','Visão consolidada · todas as filiais'],pipeline:['Pipeline comercial','Do campo ao fechamento'],orcamento:['Orçamento','Engenharia · custo e margem'],aprovacoes:['Aprovações','Decisão da diretoria'],operacao:['Operação','Execução por filial'],diario:['Diário de obra','Registros do campo · por equipe']};
-  var nav=document.getElementById('nav'), ttl=document.getElementById('ttl'), sub=document.getElementById('sub');
-  nav.addEventListener('click',function(e){
-    var a=e.target.closest('a[data-s]'); if(!a) return;
-    var s=a.getAttribute('data-s');
-    nav.querySelectorAll('a').forEach(function(x){x.classList.remove('on');}); a.classList.add('on');
+  var titles={inicio:['Seu sistema, por dentro','Prévia navegável · clique pra explorar'],painel:['Painel gerencial','Visão consolidada · todas as filiais'],pipeline:['Pipeline comercial','Do campo ao fechamento'],orcamento:['Orçamento','Engenharia · custo e margem'],aprovacoes:['Aprovações','Decisão da diretoria'],operacao:['Operação','Execução por filial'],diario:['Diário de obra','Registros do campo · por equipe']};
+  var nav=document.getElementById('nav'), ttl=document.getElementById('ttl'), sub=document.getElementById('sub'), acc=document.querySelector('.accept');
+  function go(s){
+    if(nav){ nav.querySelectorAll('a').forEach(function(x){x.classList.remove('on');}); var na=nav.querySelector('a[data-s="'+s+'"]'); if(na) na.classList.add('on'); }
     document.querySelectorAll('.screen').forEach(function(x){x.classList.remove('on');});
     var el=document.getElementById(s); if(el) el.classList.add('on');
     if(titles[s]){ ttl.textContent=titles[s][0]; sub.textContent=titles[s][1]; }
+    if(acc) acc.style.display=(s==='inicio')?'none':'flex';
     document.querySelector('.scroll').scrollTop=0;
     document.getElementById('side').classList.remove('open');
+  }
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('[data-s]'); if(!a) return;
+    e.preventDefault(); go(a.getAttribute('data-s'));
   });
+  if(acc) acc.style.display='none';
   var mb=document.getElementById('menu'); if(mb) mb.addEventListener('click',function(){ document.getElementById('side').classList.toggle('open'); });
 })();
 </script>
