@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Proposta · Nahal Group para a Spode</title>
+<meta name="theme-color" content="#06121C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&family=Instrument+Sans:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#06121C; --bg2:#0A1C2A; --panel:rgba(18,44,64,.42); --panel-bd:rgba(127,185,222,.16);
+    --azul:#15608F; --aqua:#2F9BD6; --ceu:#7FB9DE; --cyan:#46D6EC; --leito:#0F3A56;
+    --txt:#E4F0F8; --muted:#8AA3B5; --glow:rgba(70,214,236,.55);
+    --jura:'Jura',sans-serif; --sans:'Instrument Sans',system-ui,sans-serif; --mono:'Geist Mono',ui-monospace,monospace;
+    --maxw:1100px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:var(--sans);color:var(--txt);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;z-index:-3;background:
+    radial-gradient(90% 60% at 50% -5%, #0e2638 0%, var(--bg) 60%),
+    radial-gradient(60% 50% at 95% 8%, rgba(21,96,143,.28), transparent 60%),
+    radial-gradient(50% 40% at 0% 100%, rgba(21,96,143,.18), transparent 70%)}
+  body::after{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:.5;
+    background-image:linear-gradient(rgba(127,185,222,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(127,185,222,.045) 1px,transparent 1px);
+    background-size:64px 64px;mask-image:radial-gradient(80% 80% at 50% 20%,#000 40%,transparent 100%);-webkit-mask-image:radial-gradient(80% 80% at 50% 20%,#000 40%,transparent 100%)}
+  #flow{position:fixed;inset:0;z-index:-2;pointer-events:none}
+  ::selection{background:var(--cyan);color:#04101a}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:var(--jura);font-weight:500;line-height:1.06;text-wrap:balance}
+  strong{color:#fff;font-weight:600}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+  .mono{font-family:var(--mono);text-transform:uppercase;letter-spacing:.24em;font-size:11px;font-weight:500}
+  .tag{color:var(--cyan);text-shadow:0 0 14px var(--glow);display:inline-block}
+  em{font-style:normal;background:linear-gradient(90deg,var(--ceu),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  .top{position:sticky;top:0;z-index:40;background:rgba(6,18,28,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--panel-bd)}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand .sym{width:34px;height:34px;border-radius:9px;background:linear-gradient(150deg,#15608F,#2F9BD6);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .brand .sym svg{width:20px;height:20px}
+  .brand b{font-family:var(--jura);font-weight:600;font-size:16px;letter-spacing:.04em;color:#fff}
+  .brand span{font-family:var(--mono);font-size:8.5px;letter-spacing:.2em;color:var(--ceu);text-transform:uppercase;display:block;margin-top:1px}
+  .pill{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ceu);border:1px solid var(--panel-bd);border-radius:30px;padding:7px 13px}
+
+  section{padding:64px 0}
+  .hero{padding:78px 0 48px}
+  .eyebrow{margin-bottom:22px}
+  .hero h1{font-size:clamp(31px,6.2vw,60px);font-weight:600;color:#fff;letter-spacing:-.015em}
+  .hero .lead{font-size:clamp(16px,2vw,20px);color:rgba(220,235,245,.82);max-width:780px;margin:26px 0 0;text-wrap:balance}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+  .chip{border:1px solid var(--panel-bd);background:rgba(127,185,222,.05);border-radius:30px;color:#dbe9f4;padding:9px 14px;font-size:13px;font-family:var(--mono);letter-spacing:.04em}
+
+  h2.sec{font-size:clamp(26px,4.4vw,44px);color:#fff;font-weight:500;max-width:22ch}
+  .sub{color:var(--muted);font-size:clamp(15px,1.7vw,18px);margin-top:16px;max-width:66ch}
+
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:34px}
+  .card{position:relative;background:var(--panel);border:1px solid var(--panel-bd);border-radius:16px;padding:28px 26px;backdrop-filter:blur(8px);overflow:hidden}
+  .card.glow{border-color:rgba(70,214,236,.34);background:linear-gradient(150deg,rgba(21,96,143,.18),var(--panel))}
+  .card .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);text-shadow:0 0 12px var(--glow)}
+  .card h3{color:#fff;font-size:19px;font-weight:500;margin:12px 0 10px;font-family:var(--jura)}
+  .card p{color:var(--muted);font-size:14.5px}
+  .ico{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;background:rgba(70,214,236,.1);border:1px solid rgba(70,214,236,.24);color:var(--cyan);margin-bottom:16px}
+  .ico svg{width:23px;height:23px}
+
+  ul.list{list-style:none;display:grid;gap:11px;margin-top:16px}
+  ul.list li{display:grid;grid-template-columns:22px 1fr;gap:10px;color:#cbdae6;font-size:14.5px;line-height:1.5}
+  .ck{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;color:#04101a;background:linear-gradient(135deg,var(--ceu),var(--cyan));font-size:11px;font-weight:800;margin-top:2px}
+
+  /* fluxo */
+  .flow-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px;counter-reset:fs}
+  .fstep{counter-increment:fs;position:relative;border:1px solid var(--panel-bd);border-radius:16px;padding:24px 20px;background:var(--panel);backdrop-filter:blur(8px)}
+  .fstep::before{content:counter(fs);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:rgba(70,214,236,.14);color:var(--cyan);border:1px solid rgba(70,214,236,.3);font-family:var(--jura);font-weight:700;margin-bottom:14px}
+  .fstep h3{color:#fff;font-size:16px;font-weight:500;font-family:var(--jura);margin-bottom:8px}
+  .fstep p{color:var(--muted);font-size:13.5px;line-height:1.5}
+  .fstep .who{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--ceu);margin-bottom:6px;display:block}
+
+  /* contraste */
+  .vs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
+  .vs .col{border:1px solid var(--panel-bd);border-radius:16px;padding:26px;background:var(--panel)}
+  .vs .col.them{opacity:.86}
+  .vs .col h4{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px}
+  .vs .col.them h4{color:var(--muted)}
+  .vs .col.us h4{color:var(--cyan);text-shadow:0 0 12px var(--glow)}
+  .vs .col.us{border-color:rgba(70,214,236,.34);background:linear-gradient(150deg,rgba(21,96,143,.2),var(--panel))}
+  .vs .row{display:grid;grid-template-columns:20px 1fr;gap:10px;padding:9px 0;font-size:14px;color:#cbdae6;border-top:1px solid rgba(127,185,222,.08)}
+  .vs .row:first-of-type{border-top:none}
+  .vs .them .mk{color:#6f8597;font-weight:800}
+  .vs .us .ck{margin-top:1px}
+
+  /* fases */
+  .phase{display:grid;grid-template-columns:1fr;gap:16px;margin-top:34px}
+  .ph{position:relative;border:1px solid var(--panel-bd);border-radius:18px;padding:28px;background:var(--panel);backdrop-filter:blur(8px)}
+  .ph.urg{border-color:rgba(70,214,236,.4);background:linear-gradient(150deg,rgba(21,96,143,.2),var(--panel))}
+  .ph .ph-top{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .ph .n{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan)}
+  .ph h3{color:#fff;font-size:22px;font-weight:500;margin:8px 0 0;font-family:var(--jura)}
+  .ph .badge{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#04101a;background:linear-gradient(135deg,var(--ceu),var(--cyan));padding:6px 11px;border-radius:30px}
+  .ph p{color:var(--muted);font-size:14.5px;margin-top:12px}
+
+  .layer{margin-top:16px;border:1px dashed rgba(70,214,236,.4);border-radius:18px;padding:28px;background:rgba(70,214,236,.04)}
+  .layer .k{color:var(--cyan)}
+
+  .roi{border:1px solid rgba(70,214,236,.3);border-radius:20px;padding:34px 30px;background:linear-gradient(150deg,rgba(21,96,143,.22),rgba(6,18,28,.6));margin-top:8px;text-align:center}
+  .roi .big{font-family:var(--jura);font-weight:300;font-size:clamp(24px,4.2vw,40px);color:#fff;line-height:1.2;max-width:26ch;margin:10px auto 0}
+  .roi .big b{font-weight:600;color:var(--cyan);text-shadow:0 0 18px var(--glow)}
+  .inv{display:grid;grid-template-columns:1.05fr .95fr;gap:16px;margin-top:22px}
+  .inv .box{border:1px solid var(--panel-bd);border-radius:18px;padding:26px;background:var(--panel)}
+  .inv .box.main{border-color:rgba(70,214,236,.34);background:linear-gradient(150deg,rgba(21,96,143,.2),var(--panel))}
+  .inv .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  .inv .val{font-family:var(--jura);font-weight:600;font-size:clamp(28px,5vw,42px);color:#fff;line-height:1;letter-spacing:-.02em}
+  .inv .val small{font-size:.4em;color:var(--muted);font-weight:500;letter-spacing:0}
+  .inv .note{color:var(--ceu);font-size:13.5px;margin-top:10px}
+  .sched{display:grid;gap:10px;margin-top:14px}
+  .pr{display:grid;grid-template-columns:60px 1fr auto;gap:12px;align-items:center;border:1px solid var(--panel-bd);background:rgba(127,185,222,.04);border-radius:13px;padding:13px}
+  .pr .pc{font-family:var(--jura);color:var(--cyan);font-weight:700;font-size:17px}
+  .pr .d strong{display:block;font-size:14px;color:#fff;font-weight:600}
+  .pr .d span{color:var(--muted);font-size:12.5px}
+  .pr .v{color:#fff;font-weight:600;font-family:var(--jura);white-space:nowrap}
+  .notice{margin-top:18px;border-left:3px solid var(--cyan);background:rgba(70,214,236,.06);border-radius:0 14px 14px 0;padding:15px 18px;color:#dfe9f3;font-size:14px;line-height:1.6}
+  .anchor{text-align:center;color:var(--ceu);font-size:14.5px;margin-top:22px;font-family:var(--jura);font-weight:300;font-size:clamp(17px,2.4vw,22px);line-height:1.4}
+
+  .cta{text-align:center;border:1px solid rgba(70,214,236,.3);border-radius:26px;padding:48px 28px;background:radial-gradient(circle at 50% 0%,rgba(70,214,236,.16),transparent 50%),rgba(10,28,42,.6)}
+  .cta h2{font-size:clamp(28px,5vw,50px);color:#fff;max-width:20ch;margin:0 auto}
+  .cta .lead{color:var(--muted);font-size:17px;margin:20px auto 0;max-width:56ch}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.12em;font-size:12px;padding:16px 28px;border-radius:30px;margin-top:30px;background:var(--cyan);color:#04101a;box-shadow:0 0 30px -6px var(--glow);transition:transform .25s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn svg{width:18px;height:18px}
+  .founders{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:30px;color:var(--ceu);font-size:13.5px;font-family:var(--mono);letter-spacing:.04em}
+
+  footer{border-top:1px solid var(--panel-bd);padding:30px 0;text-align:center;color:var(--muted);font-family:var(--mono);font-size:10px;letter-spacing:.16em}
+
+  @media(max-width:820px){.grid3,.grid2,.vs,.inv,.phase,.flow-steps{grid-template-columns:1fr}section{padding:50px 0}.hero{padding:54px 0 30px}.pr{grid-template-columns:52px 1fr}.pr .v{grid-column:2;text-align:left}}
+</style>
+</head>
+<body>
+
+<canvas id="flow"></canvas>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand">
+      <span class="sym"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="15" r="3.4" fill="#fff"/><path d="M15 30 a9 9 0 0 0 18 0" stroke="#fff" stroke-width="3" stroke-linecap="round"/><path d="M10 30 a14 14 0 0 0 28 0" stroke="#bfe6f5" stroke-width="2.3" stroke-linecap="round"/></svg></span>
+      <span><b>Nahal Group</b><span>Muitas correntes, uma força</span></span>
+    </div>
+    <span class="pill">Proposta · Spode</span>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="mono tag eyebrow">Proposta da Nahal Group para a Spode Soluções Elétricas</span>
+    <h1>Do campo à diretoria, um sistema feito do <em>jeito que a Spode vende</em>.</h1>
+    <p class="lead">Em 14 anos, a Spode construiu uma operação de engenharia elétrica que atende o agro e a indústria de cinco estados, com fábrica de painéis, subestações, automação e equipe técnica em cada praça. A proposta da Nahal é dar a essa operação um sistema desenhado exatamente para o jeito de vocês trabalhar: o vendedor capta no campo, online e offline, a engenharia orça, a diretoria aprova a margem, e a inteligência artificial trabalha ao lado da equipe o tempo todo.</p>
+    <div class="chips">
+      <span class="chip">Vendedor online e offline</span>
+      <span class="chip">Fluxo de orçamento e aprovação</span>
+      <span class="chip">CRM por vendedor</span>
+      <span class="chip">Copiloto de IA</span>
+      <span class="chip">Painéis de margem ao vivo</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="mono tag">O que a gente entendeu da Spode</span>
+    <h2 class="sec">A gente estudou a operação antes de desenhar qualquer tela.</h2>
+    <p class="sub">Vocês não vendem um produto de prateleira. Cada subestação, cada painel, cada projeto é engenheirado, orçado e aprovado. A venda nasce no campo, com o vendedor na frente do cliente, e passa pela engenharia e pela diretoria antes de voltar fechada. É essa realidade que o sistema precisa respeitar, e potencializar.</p>
+    <div class="grid3">
+      <article class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="k">Venda por projeto</div>
+        <h3>Cada negócio é único e engenheirado</h3>
+        <p>Orçamento técnico, custo de material, margem. O sistema precisa pensar como engenharia, não como loja. É por isso que software de prateleira não serve à Spode.</p>
+      </article>
+      <article class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg></div>
+        <div class="k">A venda nasce no campo</div>
+        <h3>O vendedor no meio da lavoura, sem sinal</h3>
+        <p>Quem vende está no armazém, na cooperativa, na fazenda, muitas vezes sem internet. O sistema tem que funcionar offline e subir tudo quando a conexão voltar. Sem isso, não serve.</p>
+      </article>
+      <article class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg></div>
+        <div class="k">Capilaridade no agro</div>
+        <h3>Cinco estados, uma operação só</h3>
+        <p>Matriz no RS e filiais no PA, MT e BA, nos polos de grão do país. Esse alcance é um trunfo: dá pra padronizar a operação e comparar a performance de cada praça num lugar só.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="mono tag">O coração do sistema</span>
+    <h2 class="sec">O fluxo de venda da Spode, do jeito que ele já acontece.</h2>
+    <p class="sub">A gente não inventa um processo novo. A gente dá a cada etapa que vocês já vivem uma camada digital, com rastreabilidade, velocidade e inteligência. Do primeiro contato no campo até a proposta aprovada voltar pra mão do vendedor.</p>
+    <div class="flow-steps">
+      <div class="fstep"><span class="who">Vendedor · campo</span><h3>Capta a oportunidade</h3><p>No cliente, online ou offline, o vendedor registra a demanda e o projeto. Sem sinal, fica salvo e sobe sozinho quando a internet voltar.</p></div>
+      <div class="fstep"><span class="who">Engenharia</span><h3>Orça e dimensiona</h3><p>A oportunidade vira orçamento: material, custo e dimensionamento técnico, organizados pra ninguém errar a conta.</p></div>
+      <div class="fstep"><span class="who">Diretoria</span><h3>Aprova a margem</h3><p>Os sócios analisam margem e condições e aprovam com um clique. A decisão fica registrada, com histórico e responsável.</p></div>
+      <div class="fstep"><span class="who">Vendedor · cliente</span><h3>Fecha o negócio</h3><p>A proposta aprovada volta pra mão do vendedor, pronta pra apresentar e fechar. Nada se perde no caminho.</p></div>
+    </div>
+    <div class="notice"><strong>O que muda na prática:</strong> hoje esse vai e volta vive em conversas, ligações e arquivos soltos. No sistema, ele vira um fluxo rastreável: todo mundo sabe onde cada proposta está, quem precisa agir e quanto tempo está parada.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="layer">
+      <div class="k mono tag">A inteligência que ninguém ofereceu</div>
+      <h2 class="sec" style="margin-top:10px">Uma IA do lado do vendedor, o tempo todo.</h2>
+      <p class="sub" style="margin-top:12px">Esse é o salto que separa a Spode de qualquer concorrente. Cada vendedor ganha um copiloto que trabalha junto, não um sistema que só guarda dado. Ele ajuda a vender e nunca deixa um cliente esfriar no esquecimento.</p>
+      <div class="grid3" style="margin-top:22px">
+        <article class="card glow"><div class="k">Escreve por você</div><h3>E-mail e resposta na hora</h3><p>O vendedor pede e a IA escreve o e-mail, a proposta de texto e a resposta pro cliente, no tom certo, em segundos.</p></article>
+        <article class="card glow"><div class="k">Entende o cliente</div><h3>Contexto antes da conversa</h3><p>Antes de ligar, a IA resume o histórico, o que foi falado e o próximo passo. O vendedor chega preparado, sempre.</p></article>
+        <article class="card glow"><div class="k">Não deixa esfriar</div><h3>Cobra o vendedor no automático</h3><p>Cliente parado há tempo demais? A IA avisa: este aqui precisa de você, o que está acontecendo? E organiza a cadência de contato, diária, semanal e mensal.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="mono tag">Direcionamento técnico</span>
+    <h2 class="sec">A Nahal lidera as decisões de arquitetura. Vocês não precisam.</h2>
+    <p class="sub">Parte do nosso trabalho é tomar as decisões técnicas certas pra Spode, não empurrar o problema pra vocês. Dois pontos já direcionados:</p>
+    <div class="grid2">
+      <article class="card">
+        <div class="k">Online e offline</div>
+        <h3>Onde o sistema vive e como sincroniza</h3>
+        <p>Recomendamos uma base em nuvem com funcionamento offline no campo: o vendedor trabalha sem sinal e o sistema sincroniza sozinho ao reconectar. É mais confiável e mais acessível para todas as filiais do que depender só de servidor e VPN. A estrutura atual de vocês é respeitada e aproveitada onde fizer sentido.</p>
+      </article>
+      <article class="card">
+        <div class="k">O orçamento e o ERP</div>
+        <h3>Construído pronto pra integrar no futuro</h3>
+        <p>O sistema atual de custo e estoque de vocês ainda não abre uma porta de comunicação. Então a camada de orçamento nasce dentro do nosso sistema e já é desenhada para, quando houver caminho, puxar custo e estoque automaticamente. A gente entrega valor hoje e deixa a ponte pronta para amanhã.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="mono tag">Como entregamos</span>
+    <h2 class="sec">Em fases, começando pela urgência: o comercial.</h2>
+    <p class="sub">Cada fase entrega valor sozinha e o time da Spode valida no início de cada uma. Nada para a operação no meio do caminho.</p>
+    <div class="phase">
+      <article class="ph urg">
+        <div class="ph-top"><div><span class="n">Fase 1 · a urgência</span><h3>Comercial: do campo à aprovação</h3></div><span class="badge">Começa aqui</span></div>
+        <p>O coração do sistema. O fluxo completo da venda (campo offline, orçamento, aprovação de margem e retorno ao vendedor), o CRM por vendedor com a carteira de cada um, e o copiloto de IA já na mão da equipe.</p>
+        <ul class="list">
+          <li><span class="ck">✓</span><span>Captação no campo online e offline, com sincronização automática.</span></li>
+          <li><span class="ck">✓</span><span>Fluxo de orçamento e aprovação de margem pela diretoria, rastreável.</span></li>
+          <li><span class="ck">✓</span><span>CRM individual por vendedor e copiloto de IA para vender e dar follow-up.</span></li>
+        </ul>
+      </article>
+      <article class="ph">
+        <div class="ph-top"><div><span class="n">Fase 2</span><h3>Operação e execução</h3></div></div>
+        <p>Liga a venda aprovada à execução nas filiais. O projeto vira ordem com status, responsável e prazo, e a assistência técnica entra no mesmo fluxo, com a mesma rastreabilidade entre matriz e filiais.</p>
+        <ul class="list">
+          <li><span class="ck">✓</span><span>Do contrato à execução: etapas, responsáveis e andamento por praça.</span></li>
+          <li><span class="ck">✓</span><span>Assistência técnica e demandas no mesmo sistema, com agilidade.</span></li>
+        </ul>
+      </article>
+      <article class="ph">
+        <div class="ph-top"><div><span class="n">Fase 3</span><h3>Financeiro e painel de decisão</h3></div></div>
+        <p>Consolida a gestão. Margem por projeto e por filial, recebimentos, pagamentos e a visão gerencial ao vivo, que a diretoria abre de qualquer lugar e entende o negócio em segundos.</p>
+        <ul class="list">
+          <li><span class="ck">✓</span><span>Margem real por projeto e por filial, sem montar planilha na mão.</span></li>
+          <li><span class="ck">✓</span><span>Painel gerencial ao vivo, no computador e no celular.</span></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="mono tag">Por que a Nahal</span>
+    <h2 class="sec">Não um fornecedor de software. Um parceiro voltado ao futuro.</h2>
+    <p class="sub">A Nahal Group é um grupo que prepara negócios para o futuro: marca, tráfego, inteligência artificial, software e automação, sob o mesmo leito. Quem constrói o sistema é quem coloca a inteligência por cima, sem terceirizar a parte que mais importa. E a gente não entrega e some: evolui junto com o crescimento da Spode. Aqui tem nome e cara, o Victor e o Eduardo conduzem pessoalmente.</p>
+    <div class="grid3">
+      <article class="card"><div class="k">Tudo num lugar só</div><h3>Software, IA e automação juntos</h3><p>A mesma equipe que constrói o sistema é a que coloca a inteligência e a automação. Sem repassar pra terceiros.</p></article>
+      <article class="card"><div class="k">Parceria de verdade</div><h3>Evolui junto com a Spode</h3><p>O sistema vira um organismo vivo que acompanha cada nova filial e cada novo desafio. A gente cresce quando vocês crescem.</p></article>
+      <article class="card"><div class="k">Visão de futuro</div><h3>Um passo à frente</h3><p>A gente constrói pra onde a operação vai estar daqui a dois anos, não só pra resolver o de hoje.</p></article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="mono tag">Investimento</span>
+    <h2 class="sec">O valor de verdade, e um começo de parceria acessível.</h2>
+    <p class="sub">Um sistema sob medida nesse nível, com aplicativo offline, fluxo de aprovação e inteligência artificial para uma equipe inteira, dificilmente sai por menos de seis dígitos no mercado.</p>
+    <div class="roi">
+      <span class="mono tag">A nossa escolha</span>
+      <p class="big">A gente prefere ganhar a <b>parceria</b> a ganhar a primeira fatura. Por isso a implantação começa muito abaixo do que ela vale.</p>
+    </div>
+
+    <div class="inv">
+      <div class="box main">
+        <div class="lbl">Implantação · sistema completo nas 3 fases, com IA</div>
+        <div class="val">R$ 52.000</div>
+        <p class="note">As três fases, com o fluxo do campo à diretoria, o CRM por vendedor e o copiloto de IA inclusos. Pago por marcos: você só avança quando cada fase está funcionando.</p>
+        <div class="sched">
+          <div class="pr"><div class="pc">30%</div><div class="d"><strong>Entrada</strong><span>Início, imersão e desenho fino</span></div><div class="v">R$ 15.600</div></div>
+          <div class="pr"><div class="pc">25%</div><div class="d"><strong>Fase 1 · Comercial</strong><span>Vinculada ao módulo funcionando</span></div><div class="v">R$ 13.000</div></div>
+          <div class="pr"><div class="pc">25%</div><div class="d"><strong>Fase 2 · Operação</strong><span>Vinculada ao módulo funcionando</span></div><div class="v">R$ 13.000</div></div>
+          <div class="pr"><div class="pc">20%</div><div class="d"><strong>Fase 3 · Financeiro</strong><span>Vinculada à entrega final</span></div><div class="v">R$ 10.400</div></div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="lbl">Parceria · evolução contínua</div>
+        <div class="val">R$ 3.900<small> / mês</small></div>
+        <p class="note">Aqui mora a diferença. A mensalidade mantém a inteligência rodando, evolui o sistema todo mês, dá suporte prioritário e acompanha cada nova filial. Sem conta de hora avulsa a cada ajuste.</p>
+        <ul class="list">
+          <li><span class="ck">✓</span><span>A IA e a automação mantidas e melhoradas todo mês.</span></li>
+          <li><span class="ck">✓</span><span>Evolução e novas funções sem precisar de novo projeto.</span></li>
+          <li><span class="ck">✓</span><span>Suporte prioritário e acompanhamento do crescimento.</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="notice"><strong>Caminho de futuro:</strong> a integração automática com o sistema de custo e estoque entra como fase seguinte, quando houver a porta de comunicação. Infraestrutura e ferramentas externas são apontadas com clareza desde o início, sem surpresa. A Spode é dona de tudo que for construído.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta">
+      <span class="mono tag">O próximo passo</span>
+      <h2>Veja, na prática, o que a gente vai construir.</h2>
+      <p class="lead">Proposta boa não vive só no papel. Preparamos uma prévia navegável pra vocês: primeiro o novo site da Spode, depois o sistema que vai do campo à diretoria. Dá uma olhada com calma, e no fim a gente conversa.</p>
+      <a class="btn" href="/spode-site">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h14M12 5l7 7-7 7"/></svg>
+        Conhecer a prévia do site
+      </a>
+      <div class="founders"><span>Victor Soares · Marca, tráfego e IA</span><span>Eduardo Malheiros · Estratégia e gestão</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>NAHAL GROUP · PROPOSTA CONFIDENCIAL PARA A SPODE · 2026</footer>
+
+<script>
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var cv=document.getElementById('flow'); if(!cv) return;
+  var ctx=cv.getContext('2d'),W,H,DPR,N=Math.min(120,Math.floor(innerWidth/11)),P=[];
+  var rnd=function(a,b){return a+Math.random()*(b-a);};
+  function size(){DPR=Math.min(devicePixelRatio||1,2);W=cv.width=innerWidth*DPR;H=cv.height=innerHeight*DPR;cv.style.width=innerWidth+'px';cv.style.height=innerHeight+'px';}
+  function seed(){P=[];for(var i=0;i<N;i++)P.push({x:rnd(0,W),y:rnd(0,H),r:rnd(.6,2.1)*DPR,s:rnd(.12,.5)*DPR,ph:rnd(0,6.28),sw:rnd(.3,1)});}
+  size();seed();addEventListener('resize',function(){size();seed();});
+  var raf=null;
+  function frame(){
+    ctx.clearRect(0,0,W,H);
+    for(var k=0;k<P.length;k++){var p=P[k];p.y+=p.s;p.x+=Math.sin(p.y*0.01+p.ph)*p.sw*DPR*0.4;
+      if(p.y>H+12){p.y=-12;p.x=rnd(0,W);}if(p.x<-12)p.x=W+12;if(p.x>W+12)p.x=-12;
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.28);ctx.fillStyle='rgba(127,185,222,'+(0.08+p.r/(3*DPR)*0.1)+')';ctx.fill();}
+    raf=requestAnimationFrame(frame);
+  }
+  var play=function(){if(!raf)raf=requestAnimationFrame(frame);},stop=function(){if(raf){cancelAnimationFrame(raf);raf=null;}};
+  document.addEventListener('visibilitychange',function(){document.hidden?stop():play();});
+  play();
+})();
+</script>
+</body>
+</html>
