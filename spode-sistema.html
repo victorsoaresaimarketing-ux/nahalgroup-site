@@ -261,6 +261,8 @@
   .modcard .go{margin-top:auto;font-family:var(--head);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan)}
   @media(max-width:860px){.modgrid{grid-template-columns:1fr 1fr}}
   @media(max-width:560px){.modgrid{grid-template-columns:1fr}}
+  .accept.reveal{animation:accup .6s cubic-bezier(.2,.8,.3,1)}
+  @keyframes accup{from{transform:translateY(105%);opacity:0}to{transform:none;opacity:1}}
 </style>
 </head>
 <body>
@@ -534,7 +536,11 @@
 <script>
 (function(){
   var titles={painel:['Painel gerencial','Visão consolidada · todas as filiais'],pipeline:['Pipeline comercial','Do campo ao fechamento'],orcamento:['Orçamento','Engenharia · custo e margem'],aprovacoes:['Aprovações','Decisão da diretoria'],operacao:['Operação','Execução por filial'],diario:['Diário de obra','Registros do campo · por equipe']};
-  var nav=document.getElementById('nav'), ttl=document.getElementById('ttl'), sub=document.getElementById('sub');
+  var nav=document.getElementById('nav'), ttl=document.getElementById('ttl'), sub=document.getElementById('sub'), acc=document.querySelector('.accept');
+  var need=['painel','pipeline','orcamento','aprovacoes','operacao','diario'], seen={};
+  function reveal(s){ if(need.indexOf(s)<0) return; seen[s]=true; if(acc && acc.getAttribute('data-on')!=='1' && need.every(function(x){return seen[x];})){ acc.setAttribute('data-on','1'); acc.style.display='flex'; acc.classList.add('reveal'); } }
+  if(acc){ acc.style.display='none'; }
+  reveal('painel');
   nav.addEventListener('click',function(e){
     var a=e.target.closest('a[data-s]'); if(!a) return;
     var s=a.getAttribute('data-s');
@@ -542,6 +548,7 @@
     document.querySelectorAll('.screen').forEach(function(x){x.classList.remove('on');});
     var el=document.getElementById(s); if(el) el.classList.add('on');
     if(titles[s]){ ttl.textContent=titles[s][0]; sub.textContent=titles[s][1]; }
+    reveal(s);
     document.querySelector('.scroll').scrollTop=0;
     document.getElementById('side').classList.remove('open');
   });
