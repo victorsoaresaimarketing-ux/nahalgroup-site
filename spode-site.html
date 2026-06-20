@@ -34,7 +34,11 @@
   header.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
   header.nav.solid{background:rgba(10,12,15,.78);backdrop-filter:blur(16px);border-bottom-color:var(--line)}
   .nav-in{display:flex;align-items:center;justify-content:space-between;height:80px}
-  .nav-logo img{height:34px;width:auto;display:block;filter:brightness(1.1)}
+  .logo{display:flex;align-items:center;gap:10px}
+  .logo .lbolt svg{width:22px;height:28px;display:block;filter:drop-shadow(0 0 9px rgba(255,42,34,.75))}
+  .logo .lwm{font-family:var(--head);font-weight:700;font-style:italic;font-size:25px;letter-spacing:.03em;color:#fff;line-height:.82}
+  .logo .lwm i{display:block;font-family:var(--sans);font-weight:600;font-style:normal;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--steel);margin-top:3px}
+  .ft-top .logo .lwm{font-size:27px}
   .nav-links{display:flex;align-items:center;gap:34px}
   .nav-links a{font-family:var(--head);font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#c8d2dc;transition:color .2s}
   .nav-links a:hover{color:#fff}
@@ -146,7 +150,7 @@
 
 <header class="nav" id="nav">
   <div class="wrap nav-in">
-    <a href="#top" class="nav-logo"><img src="https://spode.ind.br/_assets/media/c171462b536baa58165e4c804faa167f.png" alt="Spode Soluções Elétricas"></a>
+    <a href="#top" class="logo"><span class="lbolt"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 11-13h-7l1-7z" fill="#FF2A22"/></svg></span><span class="lwm">SPODE<i>Soluções Elétricas</i></span></a>
     <nav class="nav-links">
       <a href="#solucoes">Soluções</a>
       <a href="#cobertura">Filiais</a>
@@ -245,8 +249,8 @@
   <div class="wrap">
     <div class="ft-top">
       <div>
-        <img src="https://spode.ind.br/_assets/media/c171462b536baa58165e4c804faa167f.png" alt="Spode">
-        <p style="color:var(--muted);font-size:14px;max-width:300px;margin-top:14px">Projetos elétricos e de automação focados no agronegócio e na indústria.</p>
+        <a href="#top" class="logo"><span class="lbolt"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 11-13h-7l1-7z" fill="#FF2A22"/></svg></span><span class="lwm">SPODE<i>Soluções Elétricas</i></span></a>
+        <p style="color:var(--muted);font-size:14px;max-width:300px;margin-top:16px">Projetos elétricos e de automação focados no agronegócio e na indústria.</p>
       </div>
       <div class="ft-c"><b>Contato</b>contato@spode.ind.br<br>(77) 99910-5200<br>Av. Presidente Kennedy, 3560<br>Panambi · Rio Grande do Sul</div>
       <div class="ft-c"><b>Soluções</b>Painéis Elétricos<br>Instalações Elétricas<br>Automação<br>Assistência Técnica</div>
