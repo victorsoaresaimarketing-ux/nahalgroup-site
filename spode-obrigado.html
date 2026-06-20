@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Obrigado · Nahal Group para a Spode</title>
+<meta name="theme-color" content="#06121C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#06121C;--cyan:#46D6EC;--red:#FF2A22;--txt:#eaf3fa;--mut:#90a6b8;--head:'Oswald',sans-serif;--disp:'Anton',sans-serif;--sans:'Inter',system-ui,sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%}
+  body{font-family:var(--sans);background:var(--bg);color:var(--txt);overflow:hidden;-webkit-font-smoothing:antialiased}
+  #bg{position:fixed;inset:0;z-index:0}
+  .glow{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(50% 55% at 50% 38%,rgba(70,214,236,.16),transparent 70%),radial-gradient(120% 90% at 50% 120%,transparent 45%,#06121C 82%)}
+  .stage{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:34px 22px}
+  .check{width:96px;height:96px;border-radius:50%;display:grid;place-items:center;border:2px solid rgba(70,214,236,.4);box-shadow:0 0 44px -6px rgba(70,214,236,.6);opacity:0;animation:pop .6s .1s cubic-bezier(.2,.9,.3,1.3) forwards}
+  .check svg{width:48px;height:48px}
+  .check path{stroke:var(--cyan);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:40;stroke-dashoffset:40;animation:draw .5s .55s ease forwards}
+  .kicker{margin-top:26px;font-family:var(--head);font-weight:600;font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--cyan);opacity:0;animation:rise .8s .35s forwards}
+  h1{font-family:var(--disp);font-weight:400;text-transform:uppercase;font-size:clamp(46px,11vw,104px);line-height:.9;color:#fff;margin:14px 0 0;text-shadow:0 6px 50px rgba(0,0,0,.5);opacity:0;animation:rise .9s .45s forwards}
+  .msg{max-width:540px;margin:20px auto 0;font-size:clamp(15px,2.4vw,18px);line-height:1.62;color:#c8d6e2;opacity:0;animation:rise .9s .6s forwards}
+  .msg b{color:#fff;font-weight:600}
+  .lock{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:46px;opacity:0;animation:rise .9s .8s forwards}
+  .brand{display:flex;align-items:center;gap:10px}
+  .nahal .nm{width:32px;height:32px;filter:drop-shadow(0 0 10px rgba(70,214,236,.55))}
+  .nahal .wm{font-family:var(--head);font-weight:700;font-size:18px;letter-spacing:.05em;color:#fff;line-height:.8;text-align:left}
+  .nahal .wm i{display:block;font-family:var(--sans);font-weight:600;font-style:normal;font-size:7px;letter-spacing:.32em;color:var(--cyan);margin-top:3px}
+  .divider{width:1px;height:34px;background:linear-gradient(180deg,transparent,rgba(144,166,184,.5),transparent)}
+  .spode .bolt{width:18px;height:18px;filter:drop-shadow(0 0 8px rgba(255,42,34,.7))}
+  .spode .sp{font-family:var(--head);font-weight:700;font-style:italic;font-size:19px;letter-spacing:.03em;color:#fff}
+  .s360{position:relative;width:29px;height:29px;margin-left:8px;display:inline-flex;align-items:center;justify-content:center;font-family:var(--head);font-weight:600;font-size:10px;color:#fff;border:1.3px solid rgba(255,42,34,.4);border-radius:50%}
+  .s360 .ring{position:absolute;inset:-3px;border:1.3px solid transparent;border-top-color:var(--red);border-right-color:var(--red);border-radius:50%;animation:spin 4s linear infinite}
+  @keyframes pop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @media(prefers-reduced-motion:reduce){.check,.kicker,h1,.msg,.lock{animation:none;opacity:1}.check path{stroke-dashoffset:0}.s360 .ring{animation:none}}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+<div class="glow"></div>
+<div class="stage">
+  <div class="check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg></div>
+  <div class="kicker">Conversa solicitada</div>
+  <h1>Obrigado!</h1>
+  <p class="msg">Recebemos o seu pedido de conversa pra avançarmos. O <b>Victor</b> e o <b>Eduardo</b> vão entrar em contato com vocês em breve, pra darmos juntos o próximo passo da Spode 360.</p>
+  <div class="lock">
+    <div class="brand nahal">
+      <svg class="nm" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="15" r="3.4" fill="#46D6EC"/><path d="M15 30 a9 9 0 0 0 18 0" stroke="#46D6EC" stroke-width="3" stroke-linecap="round"/><path d="M10 30 a14 14 0 0 0 28 0" stroke="#7fb9de" stroke-width="2.3" stroke-linecap="round"/></svg>
+      <span class="wm">NAHAL<i>GROUP</i></span>
+    </div>
+    <span class="divider"></span>
+    <div class="brand spode">
+      <svg class="bolt" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 11-13h-7l1-7z" fill="#FF2A22"/></svg>
+      <span class="sp">SPODE</span><span class="s360">360<span class="ring"></span></span>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var cv=document.getElementById('bg'),ctx=cv.getContext('2d'),W,H,DPR,N,P=[];
+  var rnd=function(a,b){return a+Math.random()*(b-a)};
+  function size(){DPR=Math.min(devicePixelRatio||1,2);W=cv.width=innerWidth*DPR;H=cv.height=innerHeight*DPR;cv.style.width=innerWidth+'px';cv.style.height=innerHeight+'px';N=Math.min(80,Math.floor(innerWidth/16));}
+  function seed(){P=[];for(var i=0;i<N;i++)P.push({x:rnd(0,W),y:rnd(0,H),r:rnd(.6,2)*DPR,s:rnd(.1,.4)*DPR,ph:rnd(0,6.28),sw:rnd(.3,1)});}
+  function paint(step){ctx.clearRect(0,0,W,H);for(var k=0;k<P.length;k++){var p=P[k];if(step){p.y-=p.s;p.x+=Math.sin(p.y*0.01+p.ph)*p.sw*DPR*0.3;if(p.y<-12){p.y=H+12;p.x=rnd(0,W);}if(p.x<-12)p.x=W+12;if(p.x>W+12)p.x=-12;}ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.28);ctx.fillStyle='rgba(70,214,236,'+(0.06+p.r/(3*DPR)*0.1)+')';ctx.fill();}}
+  size();seed();addEventListener('resize',function(){size();seed();paint(false);});
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){paint(false);return;}
+  var raf=null,loop=function(){paint(true);raf=requestAnimationFrame(loop);};
+  document.addEventListener('visibilitychange',function(){if(document.hidden){if(raf){cancelAnimationFrame(raf);raf=null;}}else if(!raf){raf=requestAnimationFrame(loop);}});
+  raf=requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>

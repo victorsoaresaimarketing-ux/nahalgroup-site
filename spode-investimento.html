@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Investimento · Nahal Group para a Spode</title>
+<meta name="theme-color" content="#06121C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#06121C;--bg2:#0A1C2A;--cyan:#46D6EC;--aqua:#2F9BD6;--azul:#15608F;--ceu:#7FB9DE;--txt:#eaf3fa;--mut:#90a6b8;--line:rgba(127,185,222,.16);--head:'Oswald',sans-serif;--disp:'Anton',sans-serif;--sans:'Inter',system-ui,sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--sans);background:var(--bg);color:var(--txt);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  #flow{position:fixed;inset:0;z-index:0;pointer-events:none}
+  .glow{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(60% 50% at 50% 0%,rgba(47,155,214,.12),transparent 70%)}
+  .wrap{position:relative;z-index:2;max-width:920px;margin:0 auto;padding:64px 22px 120px}
+  .kicker{font-family:var(--head);font-weight:600;font-size:12.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--cyan)}
+  h1{font-family:var(--disp);font-weight:400;text-transform:uppercase;font-size:clamp(34px,6.5vw,62px);line-height:.98;letter-spacing:.01em;color:#fff;margin:18px 0 0}
+  h1 .cy{color:var(--cyan)}
+  .sub{max-width:640px;margin:20px 0 0;font-size:clamp(15px,2.2vw,17px);color:#c2d2df}
+  .roi{margin:34px 0 0;padding:20px 22px;border:1px solid var(--line);border-left:3px solid var(--cyan);border-radius:12px;background:linear-gradient(180deg,rgba(70,214,236,.05),rgba(10,28,42,.2))}
+  .roi .t{font-family:var(--head);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ceu)}
+  .roi p{margin:8px 0 0;font-size:15.5px;color:#dceaf4}
+  .roi p b{color:#fff}
+  .inv{display:grid;grid-template-columns:1.25fr 1fr;gap:18px;margin:26px 0 0}
+  .box{border:1px solid var(--line);border-radius:16px;padding:24px;background:linear-gradient(180deg,rgba(18,44,64,.4),rgba(10,28,42,.25))}
+  .box.main{border-color:rgba(70,214,236,.32);box-shadow:0 0 40px -18px rgba(70,214,236,.6)}
+  .box .lbl{font-family:var(--head);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ceu)}
+  .box .val{font-family:var(--disp);font-size:clamp(40px,7vw,58px);line-height:1;color:#fff;margin:10px 0 0}
+  .box .val small{font-family:var(--sans);font-size:16px;font-weight:600;color:var(--mut);letter-spacing:0}
+  .box .note{font-size:13.5px;color:#aebecb;margin:12px 0 0;line-height:1.55}
+  .sched{margin:18px 0 0;display:flex;flex-direction:column;gap:9px}
+  .pr{display:flex;align-items:center;gap:13px;padding:11px 13px;border:1px solid var(--line);border-radius:10px;background:rgba(6,18,28,.4)}
+  .pr .pc{font-family:var(--disp);font-size:18px;color:var(--cyan);width:48px;flex-shrink:0}
+  .pr .d{flex:1;min-width:0}
+  .pr .d strong{display:block;font-size:13.5px;color:#eaf3fa;font-weight:600}
+  .pr .d span{display:block;font-size:11.5px;color:var(--mut)}
+  .pr .v{font-family:var(--head);font-weight:600;font-size:15px;color:#fff;white-space:nowrap}
+  .list{list-style:none;margin:16px 0 0;display:flex;flex-direction:column;gap:10px}
+  .list li{display:flex;gap:10px;font-size:13.5px;color:#cfdde8;line-height:1.5}
+  .list .ck{color:var(--cyan);font-weight:700;flex-shrink:0}
+  .notice{margin:20px 0 0;padding:16px 18px;border:1px dashed rgba(127,185,222,.32);border-radius:12px;font-size:13px;color:#aebecb;line-height:1.6}
+  .notice b{color:var(--ceu)}
+  .close{margin:46px 0 0;text-align:center}
+  .close h2{font-family:var(--disp);font-weight:400;text-transform:uppercase;font-size:clamp(26px,4.6vw,42px);line-height:1.02;color:#fff}
+  .close p{max-width:520px;margin:14px auto 0;font-size:15px;color:#c2d2df}
+  .cta{margin:28px auto 0;display:inline-flex;align-items:center;gap:12px;font-family:var(--head);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:16px;color:#04101a;background:linear-gradient(120deg,var(--cyan),#84e9f7);padding:19px 38px;border:none;border-radius:12px;cursor:pointer;box-shadow:0 0 34px -4px rgba(70,214,236,.75),0 16px 44px -12px rgba(0,0,0,.6);transition:transform .25s,box-shadow .25s}
+  .cta:hover{transform:translateY(-3px);box-shadow:0 0 50px -2px rgba(70,214,236,.95)}
+  .cta:disabled{opacity:.75;cursor:default;transform:none}
+  .cta svg{width:20px;height:20px}
+  .fine{margin:16px 0 0;font-size:13px;color:var(--mut)}
+  .founders{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin:30px 0 0;color:var(--ceu);font-size:13px;font-family:var(--head);letter-spacing:.04em}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .cta.loading svg{animation:spin .8s linear infinite}
+  @media(max-width:720px){.inv{grid-template-columns:1fr}.wrap{padding:48px 18px 110px}}
+  @media(prefers-reduced-motion:reduce){.cta.loading svg{animation:none}}
+</style>
+</head>
+<body>
+<canvas id="flow"></canvas>
+<div class="glow"></div>
+<div class="wrap">
+  <div class="kicker">O investimento</div>
+  <h1>Você viu o caminho.<br>Agora, o <span class="cy">passo final</span>.</h1>
+  <p class="sub">Do campo à diretoria, você navegou pelo que a gente vai construir pra Spode: o site, o sistema e a inteligência por trás dele. Aqui está o que custa pra tirar isso do papel.</p>
+
+  <div class="roi">
+    <div class="t">A nossa escolha</div>
+    <p>Um sistema sob medida nesse nível, com aplicativo offline, fluxo de aprovação e IA pra uma equipe inteira, dificilmente sai por menos de seis dígitos no mercado. A gente prefere ganhar a <b>parceria</b> a ganhar a primeira fatura. Por isso a implantação começa muito abaixo do que vale.</p>
+  </div>
+
+  <div class="inv">
+    <div class="box main">
+      <div class="lbl">Implantação · sistema completo nas 3 fases, com IA</div>
+      <div class="val">R$ 52.000</div>
+      <p class="note">As três fases, com o fluxo do campo à diretoria, o CRM por vendedor e o copiloto de IA inclusos. Pago por marcos: você só avança quando cada fase está funcionando.</p>
+      <div class="sched">
+        <div class="pr"><div class="pc">30%</div><div class="d"><strong>Entrada</strong><span>Início, imersão e desenho fino</span></div><div class="v">R$ 15.600</div></div>
+        <div class="pr"><div class="pc">25%</div><div class="d"><strong>Fase 1 · Comercial</strong><span>Vinculada ao módulo funcionando</span></div><div class="v">R$ 13.000</div></div>
+        <div class="pr"><div class="pc">25%</div><div class="d"><strong>Fase 2 · Operação</strong><span>Vinculada ao módulo funcionando</span></div><div class="v">R$ 13.000</div></div>
+        <div class="pr"><div class="pc">20%</div><div class="d"><strong>Fase 3 · Financeiro</strong><span>Vinculada à entrega final</span></div><div class="v">R$ 10.400</div></div>
+      </div>
+    </div>
+    <div class="box">
+      <div class="lbl">Parceria · evolução contínua</div>
+      <div class="val">R$ 3.900<small> / mês</small></div>
+      <p class="note">Aqui mora a diferença. A mensalidade mantém a inteligência rodando, evolui o sistema todo mês, dá suporte prioritário e acompanha cada nova filial. Sem conta de hora avulsa a cada ajuste.</p>
+      <ul class="list">
+        <li><span class="ck">✓</span><span>A IA e a automação mantidas e melhoradas todo mês.</span></li>
+        <li><span class="ck">✓</span><span>Evolução e novas funções sem precisar de novo projeto.</span></li>
+        <li><span class="ck">✓</span><span>Suporte prioritário e acompanhamento do crescimento.</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="notice"><b>Caminho de futuro:</b> a integração automática com o sistema de custo e estoque entra como fase seguinte, quando houver a porta de comunicação. A Spode é dona de tudo que for construído.</div>
+
+  <div class="close">
+    <h2>Pronto pra começar?</h2>
+    <p>Se fez sentido, é só clicar aqui embaixo. A gente recebe o seu sinal na hora e marca a conversa.</p>
+    <button class="cta" id="go">Quero conversar com a Nahal <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h14M12 5l7 7-7 7"/></svg></button>
+    <p class="fine">Sem compromisso. É só o aviso pra gente, o Victor e o Eduardo cuidam do resto.</p>
+    <div class="founders"><span>Victor Soares · Marca, tráfego e IA</span><span>Eduardo Malheiros · Estratégia e gestão</span></div>
+  </div>
+</div>
+<script>
+(function(){
+  var b=document.getElementById('go');
+  if(b){
+    b.addEventListener('click',function(){
+      if(b.disabled)return;
+      b.disabled=true;b.classList.add('loading');
+      b.childNodes[0].nodeValue='Enviando ';
+      var done=false,go=function(){if(done)return;done=true;location.href='/spode-obrigado';};
+      try{
+        fetch('https://alphatrinity.app.n8n.cloud/webhook/spode-conversa',{method:'POST',body:'spode',keepalive:true}).then(go).catch(go);
+      }catch(e){go();}
+      setTimeout(go,2500);
+    });
+  }
+  var cv=document.getElementById('flow');if(!cv)return;
+  var ctx=cv.getContext('2d'),W,H,DPR,N,P=[];
+  var rnd=function(a,b){return a+Math.random()*(b-a)};
+  function size(){DPR=Math.min(devicePixelRatio||1,2);W=cv.width=innerWidth*DPR;H=cv.height=innerHeight*DPR;cv.style.width=innerWidth+'px';cv.style.height=innerHeight+'px';N=Math.min(90,Math.floor(innerWidth/15));}
+  function seed(){P=[];for(var i=0;i<N;i++)P.push({x:rnd(0,W),y:rnd(0,H),r:rnd(.6,2)*DPR,s:rnd(.1,.4)*DPR,ph:rnd(0,6.28),sw:rnd(.3,1)});}
+  function paint(step){ctx.clearRect(0,0,W,H);for(var k=0;k<P.length;k++){var p=P[k];if(step){p.y-=p.s;p.x+=Math.sin(p.y*0.01+p.ph)*p.sw*DPR*0.3;if(p.y<-12){p.y=H+12;p.x=rnd(0,W);}if(p.x<-12)p.x=W+12;if(p.x>W+12)p.x=-12;}ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.28);ctx.fillStyle='rgba(127,185,222,'+(0.07+p.r/(3*DPR)*0.1)+')';ctx.fill();}}
+  size();seed();addEventListener('resize',function(){size();seed();paint(false);});
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){paint(false);return;}
+  var raf=null,loop=function(){paint(true);raf=requestAnimationFrame(loop);};
+  document.addEventListener('visibilitychange',function(){if(document.hidden){if(raf){cancelAnimationFrame(raf);raf=null;}}else if(!raf){raf=requestAnimationFrame(loop);}});
+  raf=requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
