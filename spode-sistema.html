@@ -189,19 +189,46 @@
   .menu-btn{display:none}
   @media(max-width:860px){
     .app{grid-template-columns:1fr}
-    .side{position:fixed;left:0;top:0;bottom:0;width:236px;z-index:120;transform:translateX(-100%);transition:transform .3s}
+    .side{position:fixed;left:0;top:0;bottom:0;width:240px;z-index:120;transform:translateX(-100%);transition:transform .3s;box-shadow:0 0 50px rgba(0,0,0,.7)}
     .side.open{transform:none}
-    .menu-btn{display:grid;place-items:center;width:36px;height:36px;border-radius:9px;border:1px solid var(--line);background:var(--card);color:var(--txt2);cursor:pointer}
+    .menu-btn{display:grid;place-items:center;width:36px;height:36px;border-radius:9px;border:1px solid var(--line);background:var(--card);color:var(--txt2);cursor:pointer;flex-shrink:0}
     .menu-btn svg{width:18px;height:18px;stroke:currentColor}
     .accept{left:0}
-    .kpis{grid-template-columns:1fr 1fr}
+    .top{padding:0 14px;gap:10px}
+    .top h1{font-size:15px}
     .top .sub{display:none}
+    .scroll{padding:18px 14px 132px;overflow-x:hidden}
+    .kpis{grid-template-columns:1fr 1fr;gap:10px}
+    .kpi{padding:15px}.kpi .v{font-size:22px}
+    .grid2,.grid2b{grid-template-columns:1fr}
+    .panel{padding:16px;overflow-x:auto}
+    table{white-space:nowrap}
+    .kanban{grid-template-columns:1fr}
+    .orc-head{flex-direction:column;align-items:flex-start;gap:14px}
+    .orc-tot{gap:20px}
+    .appr{padding:18px}
+    .appr .top2{gap:10px}
+    .appr-meta{gap:16px}
+    .flowline .sep{width:18px;margin:0 6px}
+  }
+  @media(max-width:560px){
+    .kpis{grid-template-columns:1fr}
+    .top .pill.sync{display:none}
+    .orc-tot{gap:16px}.orc-tot .t b{font-size:18px}
+    .appr .marg b{font-size:24px}
+    .appr-act{width:100%}.appr-act .btn2{flex:1}
+    .flowline{flex-wrap:wrap;gap:9px}.flowline .sep{display:none}
+    .accept{padding:10px 13px;gap:11px}
+    .accept .mk{display:none}
+    .accept .tx b{font-size:9px}
+    .accept .tx span{display:none}
+    .accept .ab{font-size:12px;padding:11px 15px}
   }
   .demo-tag{position:fixed;top:8px;right:14px;z-index:60;font-size:10px;letter-spacing:.06em;color:var(--cyan);background:rgba(8,12,18,.8);border:1px solid rgba(70,214,236,.3);border-radius:20px;padding:5px 11px}
 </style>
 </head>
 <body>
-<div class="demo-tag">Prévia de sistema · Nahal Group</div>
+<div class="demo-tag">Prévia rápida · rascunho Nahal Group</div>
 <div class="app">
 
   <aside class="side" id="side">
@@ -419,7 +446,7 @@
 
     <div class="accept">
       <span class="mk"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="15" r="3.4" fill="#fff"/><path d="M15 30 a9 9 0 0 0 18 0" stroke="#fff" stroke-width="3" stroke-linecap="round"/><path d="M10 30 a14 14 0 0 0 28 0" stroke="#bfe6f5" stroke-width="2.3" stroke-linecap="round"/></svg></span>
-      <div class="tx"><b>Isto é uma prévia</b><span>Imagine a Spode rodando assim, do campo à diretoria. Vamos construir o de verdade.</span></div>
+      <div class="tx"><b>Prévia rápida · Nahal Group</b><span>Isto é só um rascunho rápido, feito pra você sentir a ideia. O sistema de verdade é desenhado sob medida, com o time de vocês.</span></div>
       <div class="spacer"></div>
       <a class="ab" href="https://wa.me/5511955578414?text=Quero%20conversar%20para%20aceitar%20a%20proposta%20da%20Nahal%20para%20a%20Spode" target="_blank" rel="noopener">Conversar para aceitar →</a>
     </div>
