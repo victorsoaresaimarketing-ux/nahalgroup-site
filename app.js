@@ -15,7 +15,7 @@
     + '<a href="' + base + '#frentes">Serviços</a>'
     + '<a href="' + base + '#origem">Origem</a>'
     + '<a href="' + base + '#filosofia">Filosofia</a>'
-    + '<a href="' + base + '#socios">Sócios</a>'
+    + '<a href="' + base + '#grupo">O grupo</a>'
     + '<a href="blog.html">Blog</a>'
     + '<a href="' + base + '#contato" class="cta">Entrar na corrente</a>'
     + '</nav>'
@@ -27,7 +27,7 @@
     + '<p class="ft-tag">Muitas correntes, uma força.</p></div>'
     + '<div class="ft-cols">'
     + '<div class="ft-col"><h4>Frentes</h4><a href="marketing.html">Marketing e tráfego</a><a href="inteligencia.html">Inteligência artificial</a><a href="software.html">Software e apps</a><a href="marcas.html">Criação de marcas</a><a href="automacao.html">Automação 360°</a><a href="mentoria.html">Mentoria e mentalidade</a></div>'
-    + '<div class="ft-col"><h4>Grupo</h4><a href="' + base + '#manifesto">Manifesto</a><a href="' + base + '#origem">Origem do nome</a><a href="' + base + '#filosofia">Filosofia</a><a href="fundadores.html">Fundadores</a><a href="blog.html">Blog</a></div>'
+    + '<div class="ft-col"><h4>Grupo</h4><a href="' + base + '#manifesto">Manifesto</a><a href="' + base + '#origem">Origem do nome</a><a href="' + base + '#filosofia">Filosofia</a><a href="blog.html">Blog</a></div>'
     + '<div class="ft-col"><h4>Contato</h4><a href="mailto:contato@nahalgroup.com.br">contato@nahalgroup.com.br</a><a href="https://instagram.com/nahalgroupoficial" target="_blank" rel="noopener">@nahalgroupoficial</a><span>Alameda Mamoré, 503 · Alphaville · Barueri/SP · 06454-040</span><span>Atende todo o Brasil</span></div>'
     + '</div></div>'
     + '<div class="ft-bot"><span>© 2026 Nahal Group · Hidrogeometria</span><span>nahalgroup.com.br</span></div>'
@@ -41,7 +41,7 @@
   // Dados estruturados (Organization + WebSite) pra Google e pra IA generativa
   try {
     var ld = {"@context":"https://schema.org","@graph":[
-      {"@type":"ProfessionalService","@id":"https://nahalgroup.com.br/#org","name":"Nahal Group","url":"https://nahalgroup.com.br","description":"Grupo de empresas que acelera negócios em todo o Brasil: marketing e tráfego, inteligência artificial, software, criação de marcas e automação.","areaServed":{"@type":"Country","name":"Brasil"},"email":"contato@nahalgroup.com.br","address":{"@type":"PostalAddress","streetAddress":"Alameda Mamoré, 503, Alphaville","addressLocality":"Barueri","addressRegion":"SP","postalCode":"06454-040","addressCountry":"BR"},"sameAs":["https://instagram.com/nahalgroupoficial"],"founder":[{"@type":"Person","name":"Eduardo Malheiros"},{"@type":"Person","name":"Victor Soares"}]},
+      {"@type":"ProfessionalService","@id":"https://nahalgroup.com.br/#org","name":"Nahal Group","url":"https://nahalgroup.com.br","description":"Grupo de empresas que acelera negócios em todo o Brasil: marketing e tráfego, inteligência artificial, software, criação de marcas e automação.","areaServed":{"@type":"Country","name":"Brasil"},"email":"contato@nahalgroup.com.br","address":{"@type":"PostalAddress","streetAddress":"Alameda Mamoré, 503, Alphaville","addressLocality":"Barueri","addressRegion":"SP","postalCode":"06454-040","addressCountry":"BR"},"sameAs":["https://instagram.com/nahalgroupoficial"]},
       {"@type":"WebSite","@id":"https://nahalgroup.com.br/#site","name":"Nahal Group","url":"https://nahalgroup.com.br","inLanguage":"pt-BR","publisher":{"@id":"https://nahalgroup.com.br/#org"}}
     ]};
     var s = document.createElement('script'); s.type = 'application/ld+json'; s.text = JSON.stringify(ld); document.head.appendChild(s);
