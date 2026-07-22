@@ -1,6 +1,44 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
+<script>
+/* Rastreio de origem Nahal */
+(function(){
+  try{
+    var KEY='nahal_src_v1';
+    var qs=new URLSearchParams(location.search);
+    var utmKeys=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+    var utm={}; utmKeys.forEach(function(k){ var v=qs.get(k); if(v) utm[k]=v; });
+    if(qs.get('gclid')) utm.gclid=qs.get('gclid');
+    if(qs.get('fbclid')) utm.fbclid=qs.get('fbclid');
+    var stored=null;
+    try{ stored=JSON.parse(sessionStorage.getItem(KEY)||'null'); }catch(e){}
+    if(!stored){
+      stored={ utm:utm, referrer:document.referrer||'', landing:location.href, ts:Date.now() };
+      try{ sessionStorage.setItem(KEY, JSON.stringify(stored)); }catch(e){}
+    } else if(Object.keys(utm).length && !(stored.utm && Object.keys(stored.utm).length)){
+      stored.utm=utm; if(!stored.landing) stored.landing=location.href;
+      try{ sessionStorage.setItem(KEY, JSON.stringify(stored)); }catch(e){}
+    }
+    window.NahalSource=stored;
+    var isHook=function(u){ u=String(u||''); return u.indexOf('/webhook/victoria')>-1 || u.indexOf('/webhook/nahal-chat')>-1 || u.indexOf('alphatrinity.app.n8n.cloud')>-1; };
+    if(window.fetch){
+      var of=window.fetch;
+      window.fetch=function(input, init){
+        try{
+          var url=(typeof input==='string')?input:(input&&input.url);
+          if(isHook(url) && init && typeof init.body==='string'){
+            var b=JSON.parse(init.body);
+            if(b && typeof b==='object' && !b.source){ b.source=window.NahalSource; init=Object.assign({}, init, {body:JSON.stringify(b)}); }
+          }
+        }catch(e){}
+        return of.apply(this, arguments.length?[input,init]:[input]);
+      };
+    }
+  }catch(e){}
+})();
+</script>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Conheça o futuro · VictorIA</title>
